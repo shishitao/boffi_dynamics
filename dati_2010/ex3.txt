@@ -1,0 +1,37 @@
+Second Home Assignment
+June 24, 2010
+
+Contents
+1 Diﬀerential support motion 2 Continuous system 3 Inelastic design You must submit your paper before your oral examination. 1 2 2
+
+1
+
+Diﬀerential support motion
+
+A
+
+L
+
+m B C
+
+L
+Figure 1: structural model The system in ﬁgure 1 can be modeled as a SDOF system, disregarding the beam mass that is much less than the suspended mass M . The system is excited by the horizontal motion of the external support in B (NB: the beam is continuous in B), namely uB = 3mm sin ωt. Assume that axial and shear deformations are negligible with respect to the ﬂexural deformations. 1. Determine the natural frequency of vibration. 1
+
+2. Determine the inﬂuence matrix E. 3. Write the equation of motion. 4. Find the peak value of the bending moment in A. The relevant parameters are: • m = 18000kg, • L = 2m, • EJ = 3.6MN m2 , • ω = 3 · 2π, • ζ = 0.03.
+
+2
+
+Continuous system
+
+k
+
+L
+Figure 2: elastically supported beam The beam in the ﬁgure 2 is clamped at the left end and it is supported by a spring at the right end, has constant unit mass m and constant ﬂexural stiﬀness EJ. Find the ﬁrst and second frequencies of free vibration and plot the corresponding eigenfunctions for kspring = 2 EJ . L3 Find the ﬁrst and second frequencies for kspring = α EJ and plot in a log-lin L3 diagram the eigenfrequencies ωi (α), i = 1, 2 for 10−3 < α < 10+3 .
+
+3
+
+Inelastic design
+
+A SDOF system has a natural frequency of vibration fn = 2.5Hz and a yield strength fy = 0.60w, where w is the system’s weight. Find the system’s required ductility µ and its peak displacement xm for a design maximum ground acceleration of 0.4g, knowing that the ampliﬁcation factor for spectral accelerations (elastic) is αA = 2.4 and that the spectral region in which the system lies is the region where A = αA xg0 . ¨ If we want to reduce by 10% the maximum displacement xm , what should be done? 2
+
+

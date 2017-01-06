@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <title>Dynamics of Structures</title>
+    <meta http-equiv="content-type" content="text/html;charset=latin-1"></>
+     <link rel="stylesheet" href="../css/3.13.css" type="text/css"></link>
+  </head>
+  <body>
+    <div id="container">
+      <div id="banner">
+        <a href="http://www.polimi.it">
+          <img style="border: 0px solid ; width: 158px; height: 65px;"
+            src="../logopolired.png" alt="Politecnico di Milano" ></img>
+        </a>
+        <h1><a href="../sd_2014.html">Dynamics of Structures</a></h1>
+      </div><!-- banner -->
+      <div id="outer">
+        <div id="left">
+          <h2>2014-04-08</h2>
+        </div>
+        <div class="onwhite" id="content">
+          <h2>Step by Step Methods</h2>
+          <p class="first">
+            Today's class was devoted to the numerical methods for the
+            integration of the equation of motion in the time domain,
+            that we collectively name <i>Step by Step Methods</i>.
+          </p>
+          <p>
+            We introduced the concept of the <em>state</em> of a
+            linear or non linear system, and the idea of computing the
+            state of the system at the end of a short time step as a
+            mean to compute, step by step, the response of a SDOF
+            system in an approximate manner.
+          </p>
+          <p>
+            The specific qualities and defects of SbS methods were
+            discussed at some length, especially the cause of errors
+            and the problem of <i>numerical instability</i>.
+          </p>
+          <p>
+            First of all, we discussed the <i>Central Differences
+            Method</i>, an <i>unstable</i> method that appeals the
+            numerical analyst with its semplicity. The method gives
+            also a taste of the structure of step by step solutions,
+            where the end state is expressed in terms of the initial
+            state and the values of the loadings at the extremes of
+            the step.
+          </p>
+          <p>
+            The central differences is an explicit method, next we
+            introduced <em>implicit</em> methods, that can be
+            collected under the name of <em>Newmark's Beta
+            Methods</em>, and we studied in particular the
+            <em>Constant</em> and the <em>Linear Acceleration
+            Methods</em>, the Constant Acceleration being remarkable
+            as it is a <em>stable</em> method of integration.
+          </p>
+          <p>
+            We ended introducing the modified Newton-Raphson method
+            for the solution of non linear problems, with the
+            discussion of an elasto-plastic system.
+          </p>
+          <h2>Rigid Body Assemblages</h2> 
+	  <p>
+	    Sometimes an assemblage of rigid bodies, springs and
+	    dampers happens to be a single degree of freedom
+	    system.<br></br>
+	    In this case, the equation of motion can be written
+	    determining all the forces acting on the system (using the
+	    D'Alembert principle for the determination of inertial
+	    forces) in terms of the sole free variable and using the
+	    Principle of Virtual Displacements for rigid bodies (for a
+	    rigid, virtual displacement the virtual work of the
+	    external forces must be equal to zero).</p>
+	  <p>
+	    We have seen a number of examples.</p>
+          <h4>Materials available for this class:</h4>
+          <ul>
+            <li><a href="04/slides.pdf">the slides</a> i used for my lesson</li>
+            <li>a ready to <a href="04/handout.pdf">print version</a> of the
+                slides,</li>
+            <li>the notebooks that i used in class,
+              <ul>
+                <li> <a
+		    href="http://nbviewer.ipython.org/url/www.stru.polimi.it/people/boffi/dati_2014/04/Piecewise.ipynb">
+		    exact response for piecewise linear excitation,</a></li>
+                <li> <a
+		    href="http://nbviewer.ipython.org/url/www.stru.polimi.it/people/boffi/dati_2014/04/Constant.ipynb">
+		    constant acceleration algorithm,</a></li>
+                <li> <a
+		    href="http://nbviewer.ipython.org/url/www.stru.polimi.it/people/boffi/dati_2014/04/Linear.ipynb">
+		    linear acceleration algorithm,</a></li>
+                <li>                  <a
+		    href="http://nbviewer.ipython.org/url/www.stru.polimi.it/people/boffi/dati_2014/04/EP_Exact+Numerical.ipynb">
+		    exact integration + numerical integration of the
+		    EOM for the EP system described at the end of the
+		    slides.</a></li>
+              </ul>
+	      Please note that the above are links to a site that
+	      renders <em>statically</em> my notebooks in your
+	      browser. Would you like to interact with the notebooks,
+	      <ol>
+		<li> 
+		  open a notebook using one of the links above</li>
+		<li>
+		  download the notebook using the top-right icon</li>
+		<li>
+		  start the ipython notebook server in the same
+		  directory where you have saved the notebook (you can
+		  save many notebooks in the same directory).
+	      </ol> 
+
+	      What about the <em>ipython notebook server</em> bit in
+	      the above sentence? If you're a Mac or Windows user, my
+	      suggestion is <a
+	      href="http>//continuum.io/downloads">the Anaconda python
+	      distribution</a>, where you can find an installer that
+	      fills your hard disk, ahem, that puts all the relevant
+	      items in place. When you're done, open a Terminal.app
+	      a.k.a. command prompt, cd to the directory with the
+	      notebooks and type <code>ipython
+	      notebook</code>... Caveat: last time I tried on windows,
+	      IE didn't work and I had to use chrome as my
+	      browser. Your experience could be different.
+	    </li>
+	  </ul>
+        </div><!-- content -->
+      </div><!-- outer -->
+      <div id="footer">
+          <table border="0" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="33%" align="left"  ><a href="_03.html">2014-04-01</a></td>
+              <td width="34%" align="center"><a href="../sd_2014.html">Home</a></td>
+              <td width="33%" align="right" ><a href="_05.html">2014-04-15</a></td>
+            </tr>
+          </table>
+      </div><!-- footer -->
+      <address>
+        <a href="mailto:giacomo.boffi@polimi.it">Giacomo Boffi</a>
+      </address>
+      </div>
+      <!-- Created: Thu Oct 25 20:40:56 CEST 2007 -->
+    </div><!-- container -->
+  </body>
+</html>

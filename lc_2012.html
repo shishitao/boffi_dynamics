@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+            "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+  <head>
+    <meta 
+      http-equiv="Content-Type"
+      content="text/html";
+      charset="utf-8">
+    <title>LABORATORIo di Costruzione 2011-2012</title>
+    <style type="text/css">
+      body { padding-left: 15em; font-family: Georgia, "Times New Roman", Times, serif; color: #623; background-color: #cef }
+      h1 { font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif }
+      ul.navbar { list-style-type: none; padding: 0; margin: 0; position: absolute; top: 3.4em; left: 1em; width: 13em }
+      ul.navbar li { background: #ffd; margin: 0.5em 0; padding: 0.3em; border-right: 1em solid #623 }
+      ul.navbar a { text-decoration: none }
+      a:link { color: #623}
+      a:visited { color: #363 }
+      address { margin-top: 1em; padding-top: 1em; border-top: thin dotted }
+    </style>
+  </head>
+
+  <body style="font-size:1em">
+    <ul class="navbar">
+      <li><a href="http://www.stru.polimi.it/people/boffi/index.html">Home page</a>
+      <li><a href="http://www.stru.polimi.it/people/boffi/lc_2012.html">Laboratorio di Costruzione</a>
+      <li><a href="http://www.stru.polimi.it/people/boffi/sd_2012.html">Dynamics of Structures</a>
+      <li><a href="http://www.stru.polimi.it/people/boffi/sd_2012.html">Something else</a>
+    </ul>
+    <h1>Mantova, LABORATORIo di Costruzione 2012&#8211;2013</h1>
+
+    <h2>3 dicembre 2012, fondazioni superficiali</h2>
+
+    Oggi abbiamo visto <a href="mantova_2012-13/fonda2012.pdf">queste
+      slides</a> sulle fondazioni superficiali: plinti isolati, plinti
+    composti, travi rovesce e platee di fondazione, capacità portante
+    delle fondazioni superficiali, interazione terreno-fondazione,
+    dimensionamento e verifica delle fondazioni, note sulla normativa.
+
+    <br>Se volete stamparle, ecco qui una versione delle <a
+    href="mantova_2012-13/fonda2012-3up.pdf">slides pronte per la stampa</a>.
+
+    <h2>13 novembre 2012, spettro di risposta e sap2000</h2>
+
+    Ecco l'<a href="mantova_2012-13/sismica2.pdf">esercitazione</a> di
+    oggi, in cui abbiamo dettagliatamente derivato le ordinate
+    spettrali per il sito di Moglia.
+
+    Nella seconda parte della mattinata abbiamo invece visto il
+    programma <a href="mantova_2012-13/Sap_2000_v_74.zip">SAP 2000</a>
+    nella versione liberamente utilizzabile da degli studenti.
+
+    Breve riassunto, che non tiene conto del fatto che mettere a punto
+    un buon modello per l'analisi è un processo iterativo:
+    <ul>
+      <li>mettere a posto le unità di misura,
+      <li>generare una maglia (grid) piana,
+      <li>controllare /modificare i vincoli a terra,
+      <li>correggere la geometria del telaio ("incollare i nodi"),
+      <li>definire le sezioni di travi e colonne,
+      <li>assegnare alle travi e alle colonne le sezioni,
+      <li>assegnare alle travi gli "end offsets",
+      <li>copiare il telaio per realizzare una struttura spaziale,
+	<ul>
+	  <li>introdurre delle travi tra telaio e telaio
+	</ul>
+      <li>introdurre i vincoli interni di diaframma rigido
+	<ul>
+	  <li>uno per piano
+	  <li>partendo dal basso
+	</ul>
+      <li>definire i casi di carico statico, con le diverse tipologie
+	permanente, accidentale, vento, sisma, etc 
+      <li>definire le combinazioni di carico per tutti gli stati
+	limite che vogliamo analizzare,
+      <li>eseguire l'analisi,
+      <li>esaminare i risultati.
+    </ul>
+    
+    Un diffuso <a
+      href="http://dicata.ing.unibs.it/gelfi/software/vcaslu.zip">programma
+      per il progetto e la verifica di sezioni in calcestruzzo
+      armato</a> è stato scritto (con la collaborazione dei suoi
+    studenti) e reso disponibile dal prof. Piero Gelfi,
+    dell'Università di Brescia.  <br/>Il programma dipende dalla
+    <em><strong>precedente</strong></em> installazione di <a
+      href="http://dicata.ing.unibs.it/gelfi/software/pacchettocomune.zip">queste
+      librerie</a>. È disponibile anche un programma per l'analisi
+    di travi continue.
+
+    <h2>5 novembre 2012, l'azione sismica</h2>
+
+    La <a href="mantova_2012-13/sismica1.pdf">prima lezione</a> sulle
+    azioni sismiche e le costruzioni in zona sismica.
+
+    <h2>16 ottobre 2012, la concezione strutturale</h2>
+
+    Ecco <a href="mantova_2012-13/2012-10-16.pdf">le slides della
+      lezione di oggi</a>, nella versione aggiornata a quanto mostrato
+    in aula.
+
+    <br>
+    
+    Ecco qui <a href="mantova_2012-13/forzespost.pdf">le slides degli esercizi</a>, finalmente...
+
+    <h2>Il vecchio materiale (2011-12)</h2>
+
+    Il vecchio materiale è accessibile attraverso <a href="lc_2011.html">la vecchia home del corso</a>.
+
+    <address><a href="mailto:giacomo.boffi@polimi.it">Giacomo Boffi</a></address>
+    <!-- Created: Wed Oct 26 17:44:23 CEST 2011 -->
+    <!-- hhmts start -->
+Last modified: Wed Dec  5 08:15:44 CET 2012
+<!-- hhmts end -->
+  </body>
+</html>

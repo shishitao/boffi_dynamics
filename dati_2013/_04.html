@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <title>Dynamics of Structures</title>
+    <meta http-equiv="content-type" content="text/html;charset=latin-1"></>
+     <link rel="stylesheet" href="../css/3.13.css" type="text/css"></link>
+  </head>
+  <body>
+    <div id="container">
+      <div id="banner">
+        <a href="http://www.polimi.it">
+          <img style="border: 0px solid ; width: 158px; height: 65px;"
+            src="../logopolired.png" alt="Politecnico di Milano" ></img>
+        </a>
+        <h1><a href="../sd_2013.html">Dynamics of Structures</a></h1>
+      </div><!-- banner -->
+      <div id="outer">
+        <div id="left">
+          <h2>2013-04-09</h2>
+        </div>
+        <div class="onwhite" id="content">
+          <h2>Step by Step Methods</h2>
+          <p class="first">
+            Today's class was devoted to the numerical methods for the
+            integration of the equation of motion in the time domain,
+            that we collectively name <i>Step by Step Methods</i>.
+          </p>
+          <p>
+            We introduced the concept of the <em>state</em> of a
+            linear or non linear system, and the idea of computing the
+            state of the system at the end of a short time step as a
+            mean to compute, step by step, the response of a SDOF
+            system in an approximate manner.
+          </p>
+          <p>
+            The specific qualities and defects of SbS methods were
+            discussed at some length, especially the cause of errors
+            and the problem of <i>numerical instability</i>.
+          </p>
+          <p>
+            First of all, we discussed the <i>Central Differences
+            Method</i>, an <i>unstable</i> method that appeals the
+            numerical analyst with its semplicity. The method gives
+            also a taste of the structure of step by step solutions,
+            where the end state is expressed in terms of the initial
+            state and the values of the loadings at the extremes of
+            the step.
+          </p>
+          <p>
+            The central differences is an explicit method, next we
+            introduced <em>implicit</em> methods, that can be
+            collected under the name of <em>Newmark's Beta
+            Methods</em>, and we studied in particular the
+            <em>Constant</em> and the <em>Linear Acceleration
+            Methods</em>, the Constant Acceleration being remarkable
+            as it is a <em>stable</em> method of integration.
+          </p>
+          <p>
+            We ended introducing the modified Newton-Raphson method
+            for the solution of non linear problems, with the
+            discussion of an elasto-plastic system.<br>
+            </br>The homework assigned was about an elastoplastic
+            system subjected to an impulsive loading.
+          </p>
+          <h4>Materials available for this class:</h4>
+          <ul>
+            <li><a href="04/slides.pdf">the slides</a> i used for my lesson</li>
+            <li>a ready to <a href="04/handout.pdf">print version</a> of the
+                slides,</li><br>also something about your homework</br>
+            <li>a <a href="04/exact.py">Python script</a> to do
+            analytical integration of the EOM for the homework example,</li>
+            <li>the <a href="04/exact.pdf">short paper</a>, that was
+            shown in class, that documents the above script</li>
+            <!-- <li><a href="04/ep_chopra.py">another Python script</a>
+            that solves numerically, using the modified Newton-Raphson
+            method, problem similar to the homework</li> 
+            <li>a <a href="04/exact_chopra.py">last Python script</a>
+            to integrate analytically the EOM for the previous
+            problem, so that you can compare the exact solution with
+            the results of the numerical integration.</li> -->
+            <li>the notebooks that i used in class, both the
+              executables and a pdf version that can be read onscreen
+              or printed without the software the is needed for the
+              live notebooks
+              <ul>
+                <li>exact response for piecewise linear excitation,
+                  <a href="04/Piecewise.ipynb">notebook</a> and
+                  <a href="04/Piecewise.pdf">PDF</a>,</li>
+                <li>constant acceleration algorithm,
+                  <a href="04/Constant.ipynb">notebook</a> and
+                  <a href="04/Constant.pdf">PDF</a>,</li>
+                <li>linear acceleration algorithm,
+                  <a href="04/Linear.ipynb">notebook</a> and
+                  <a href="04/Linear.pdf">PDF</a>,</li>
+                <li>exact integration of the EOM for the EP system of
+                  your exercise,
+                  <a href="04/Exact_EP.ipynb">notebook</a> and
+                  <a href="04/Exact_EP.pdf">PDF</a>.</li>
+              </ul>
+	    </li>
+	  </ul>
+	  <h5>Notebooks?</h5>
+
+	  In case you're interested in notebooks, you are in one of
+	  two categories: either Linux users or all the others. </br>
+
+	  Linux users can install the notebook machinery and lots of
+	  other computational libraries from their distribution's
+	  repositories, looking for <a href="http://ipython.org">IPython</a>
+	  (that contains the notebook itself) and the underlying
+	  libraries,<a href="http://numpy.org"> numpy</a>, <a
+	  href="http://scipy.org">scipy</a> and <a
+	  href="http://matplotlib.org">matplotlib</a>.
+
+	  Mac and Windows users have a somehow simpler option,
+	  installing the heartily recommended <a
+	  href="http://www.enthought.com/products/edudownload.php">
+	    Enthought Python Distribution</a> that comprises
+	  everything I mentioned and many others scientific and
+	  engineering modules and is free (i.e., <em>gratis</em>) for
+	  students.
+        </div><!-- content -->
+      </div><!-- outer -->
+      <div id="footer">
+          <table border="0" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="33%" align="left"  ><a href="_03.html">2013-03-26</a></td>
+              <td width="34%" align="center"><a href="../sd_2013.html">Home</a></td>
+              <td width="33%" align="right" ><a href="_05.html">2013-04-16</a></td>
+            </tr>
+          </table>
+      </div><!-- footer -->
+      <address>
+        <a href="mailto:giacomo.boffi@polimi.it">Giacomo Boffi</a>
+      </address>
+      </div>
+      <!-- Created: Thu Oct 25 20:40:56 CEST 2007 -->
+    </div><!-- container -->
+  </body>
+</html>

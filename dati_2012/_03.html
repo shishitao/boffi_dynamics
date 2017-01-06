@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <title>Dynamics of Structures</title>
+    <meta http-equiv="content-type" content="text/html;charset=latin-1"></>
+     <link rel="stylesheet" href="../css/3.css" type="text/css"></link>
+  </head>
+  <body>
+    <div id="container">
+      <div id="banner">
+        <a href="http://www.polimi.it">
+          <img style="border: 0px solid ; width: 212px; height: 65px;"
+            src="http://old.polimi.it/pubblicazioni/images_logo/WEB/04/04_bianco.gif" alt="Politecnico di Milano" ></img>
+        </a>
+        <h1>Dynamics of Structures<br /></h1>
+      </div><!-- banner -->
+      <div id="outer">
+        <div id="left">
+          <h2>2011-04-03</h2>
+        </div>
+        <div class="onwhite" id="content">
+          <h2>SDOF system response to Impulsive Loads</h2>
+          <h2>Intro to Step by Step methods</h2>
+          <p class="first">Today we  started with the construction of
+            a spreadsheet to integrate the equation of motion of an
+            undamped system using the Duhamel integral. A spreadsheet
+            that does the same for a damped sytem is available (see
+            below). </p>
+          
+          <p>Next, we have seen two exercises, one about
+            <em>aliasing</em> and the other about <em>solution in the
+              frequency domain</em>. Printouts of the two exercises
+            are available  (see below).</p>
+          
+          <h4>Impulsive loads</h4>
+          <p class="first">An impulsive load is characterized by a
+            short duration and is usually analyzed under the assumption
+            of negligible effects of damping.</p>
+          
+          <p>Simple analytical solutions can be given for an half-sine
+            impulse, a rectangular impulse and a triangular impulse.</p>
+          
+          <p>The results of our analyses can be summarized in a
+            <em>shock-spectrum</em>, a graph of the <em>peak values</em>
+            of the response ratio.</p>
+          
+          <p>For <em>really</em> short impulse a very good
+            approximation to the peak response is given by a simple
+            formula, based on an approximation to the value of the
+            system's momentum.</p>
+          
+          <h4>Intro to SbS methods</h4>
+          <p>We are able to compute numerically the response of a SDOF using
+            either the Duhamel integral or the frequency response
+            function plus the DFT, but these methods hold only for
+            linear systems, being based on the superposition of
+            effects. Many applications require taking into account
+            different sources of non-linear behaviour. A reasonable
+            solution is given by the use of linear methods to compute
+            the solution in a short time step, during which the
+            characteristics of the system can be held constant.</p>
+
+          <p> It is recognized that if we want to restart our
+            computations in a generical moment, we have to know the
+            position AND the volocity of our linear system. these two
+            quantities are said to constitute a <em>state vector</em>
+            of the linear system. For a non-linear system, the state
+            vector must be augmented with some other info, e.g.,
+            plastic deformation, cumulated plastic deformation,
+            etc.</p>
+          
+          <p>A simple step-by-step method is the so
+            called piecewise-linear method: the loading is assumed to
+            have a linear behaviour during a time step, identified by
+            its initial and final values, so that the state  of the
+            system at the end of the current step can be computed in
+            terms of these two values and of the initial state. </p>
+
+          <h4>Materials available for this class:</h4>
+          <ul>
+            <li>the <a href="03/slides.pdf">slides</a>  i used for my lesson</li>
+            <li>a ready to <a href="03/handout.pdf">print version</a> of the
+              slides,</li>
+            <li>the<a href="03/Duhamel,num.xls"> <em>complete</em>
+                spreadsheet</a> with also the responses of damped
+              systems.</li>
+            <li>the printout of <a href="03/aliasing.pdf">the exercise on aliasing</a>,</li>
+            <li>the printout of <a href="03/Fft_analysis.pdf">the exercise on DFT</a>,</li>
+            <li><a href="03/simple_fft_commented.py">a simple
+                implementation of FFT</a>,</li>
+            <li>just for fun, <a href="03/short+test_fft.py">a one liner</a> fft function...</li>
+          </ul>
+        </div><!-- content -->
+      </div><!-- outer -->
+      <div id="footer">
+        <table border="0" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="33%" align="left"  ><a href="_02.html">2011-03-27</a></td>
+            <td width="34%" align="center"><a href="../sd_2012.html">Home</a></td>
+            <td width="33%" align="right" ><a href="_04.html">2011-04-12</a></td>
+          </tr>
+        </table>
+      </div><!-- footer -->
+      <address>
+        <a href="mailto:giacomo.boffi@polimi.it">Giacomo Boffi</a>
+      </address>
+      </div>
+      <!-- Created: Thu Oct 25 20:40:56 CEST 2007 -->
+    </div><!-- container -->
+  </body>
+</html>

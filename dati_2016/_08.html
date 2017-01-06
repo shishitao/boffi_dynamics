@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <head>
+    <title>Dynamics of Structures</title>
+    <meta http-equiv="content-type" content="text/html;charset=latin-1"></>
+     <link rel="stylesheet" href="../css/3.13.css" type="text/css"></link>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="banner">
+        <a href="http://www.polimi.it">
+          <img style="border: 0px solid ; width: 158px; height: 65px;"
+            src="../logopolired.png" alt="Politecnico di Milano" ></img>
+        </a>
+        <h1>Dynamics of Structures<br /></h1>
+      </div><!-- banner -->
+      <div id="outer">
+        <div id="left">
+          <h2>2016-04-14</h2>
+        </div>
+        <div class="onwhite" id="content">
+          <h2>Matrix Iteration, Modal Contributions and Static Correction</h2>
+          <p class="first">
+            Returning on our last topic, we see one  example of the
+            Rayleigh-Ritz procedure, we discuss the Subspace Iteration
+            Method and finally we do an exercise on subspace iteration.
+          </p>
+          <center>-oOo-</center>
+          <p class="first">
+            The second part was devoted to the analysis of the
+            relative importance of the different modal contributions to
+            the response.
+          </p>
+          <h3>Modal contributions</h3>
+          <p class="first">
+            We analyze the common case in which the dynamic load can
+            be expressed by a constant load vector \(\boldsymbol r\)
+            modulated by an adimensional function of time,
+            \(f(t)\) (e.g., the seismic excitation can be
+            described in such terms).
+            <ul>
+              <li> We start our argument introducing the modal
+                partecipation factor: the MPF measures the "tuning"
+                between the loading vector and the modal shape.
+              </li>
+
+              <li> Reasoning on the definition of the MPF, we find that
+                it is possible to represent the load as a sum of modal
+                load contributions, \(\boldsymbol r = \sum \boldsymbol r_i\).
+              </li>
+              <li> Next, we recognize that it is possible, mode for
+                mode, to represent the modal response in terms of a
+                constant, pseudo-static response, due to the modal
+                load contribution, modulated by a (nearly)
+                adimensional response function.
+              </li> 
+
+              <li> Introducing <em>a)</em> the modal contribution
+		factor, the ratio between the modal response
+		contribution and the static response, <em>b)</em> the
+		dynamic response amplification factor and <em>c)</em>
+		the peak factors, we finally see that it is possible
+		to single out the effects of the static response and
+		the dynamic amplification.
+	      </li>
+            </ul></p>
+
+	  <h3>Static correction</h3>
+
+	  <p class="first">
+	    We have recognized that, for a given response quantity, we
+	    have a static response that, mode by mode, is modulated by
+	    a a dynamic amplification and a constant modal
+	    contribution factor.
+          </p><p>
+            For modal frequencies much larger than the excitation
+            frequency, the dynamic amplification tends to unity and
+            the response is essentially static.
+          </p><p>
+            From this consideration, the static correction procedure
+            insert into the response the higher modes contributions in
+            term of an enveloping of a static response that, surprise,
+            can be computed also in terms of the lower modes
+            characteristics!
+          </p><p class="first">
+                        Material available for this class:
+            <ul>
+              <li><a href="08/slides.pdf">the slides</a> i used for my lesson,</li>
+              <li>a ready to <a href="08/handout.pdf">print version</a> of the
+                  slides,</li>
+	      <li>the <a href=
+		  "http://nbviewer.ipython.org/urls/dl.dropboxusercontent.com/u/57755729/boffi/dati_2016/08/Subspace2.ipynb"
+		  >notebook</a> about subspace iteration</li>
+            </ul>
+          </p><br></br>
+        </div><!-- content -->
+      </div><!-- outer -->
+      <div id="footer">
+        <table border="0" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="33%" align="left"  ><a href="_07.html">2016-04-12</a></td>
+            <td width="34%" align="center"><a href="../sd_2016.html">Home</a></td>
+            <td width="33%" align="right" ><a href="_09.html">2016-04-19</a></td>
+          </tr>
+        </table>
+      </div><!-- footer -->
+      <address>
+        <a href="mailto:giacomo.boffi@polimi.it">Giacomo Boffi</a>
+      </address>
+      </div>
+      <!-- Created: Thu Oct 25 20:40:56 CEST 2007 -->
+    </div><!-- container -->
+  </body>
+</html>

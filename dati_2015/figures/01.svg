@@ -1,0 +1,163 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: fig2dev Version 3.2 Patchlevel 5e -->
+<!-- CreationDate: Sun Jan  3 14:45:23 2016 -->
+<!-- Magnification: 2.100 -->
+<svg	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="5.0in" height="1.0in"
+	viewBox="163 119 6032 1224">
+<g style="stroke-width:.025in; fill:none">
+<!-- Line -->
+<polyline points="377,188
+377,944
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="377,188
+188,377
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="377,377
+188,566
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="377,566
+188,755
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="377,755
+188,944
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Circle -->
+<circle cx="3212" cy="566" r="94"
+ style="fill:#000000;stroke:#000000;stroke-width:15;"/>
+<!-- Circle -->
+<circle cx="6047" cy="566" r="132"
+ style="fill:#000000;stroke:#000000;stroke-width:15;"/>
+<!-- Line -->
+<polyline points="377,566
+6047,566
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<!--  main dimension line  -->
+<polyline points="629,1133
+2960,1133
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 377 1133 - 3244 1133-->
+<polygon points="3029 1196
+3218 1133
+3029 1070
+2966 1133
+3029 1196
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Arrowhead on XXXpoint 3212 1133 - 346 1133-->
+<polygon points="560 1070
+371 1133
+560 1196
+623 1133
+560 1070
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<!--  tick  -->
+<polyline points="377,1007
+377,1259
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<!--  tick  -->
+<polyline points="3212,1007
+3212,1259
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<!--  tick  -->
+<polyline points="3212,1007
+3212,1259
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<!--  tick  -->
+<polyline points="6047,1007
+6047,1259
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<!--  main dimension line  -->
+<polyline points="3464,1133
+5795,1133
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 3212 1133 - 6078 1133-->
+<polygon points="5864 1196
+6053 1133
+5864 1070
+5801 1133
+5864 1196
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Arrowhead on XXXpoint 6047 1133 - 3181 1133-->
+<polygon points="3395 1070
+3206 1133
+3395 1196
+3458 1133
+3395 1070
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Text -->
+<text xml:space="preserve" x="3212" y="377" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="252" text-anchor="middle">m</text>
+<!-- Text -->
+<text xml:space="preserve" x="6047" y="377" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="252" text-anchor="middle">2m</text>
+<!-- Line -->
+<!--  text box  -->
+<polygon points="4440,944
+4440,1322
+4818,1322
+4818,944
+4440,944
+" style="stroke:#000000;stroke-width:0;
+stroke-linejoin:miter; stroke-linecap:butt;
+fill:#ffffff;
+"/>
+<!-- Line -->
+<!--  text box  -->
+<polygon points="1606,944
+1606,1322
+1984,1322
+1984,944
+1606,944
+" style="stroke:#000000;stroke-width:0;
+stroke-linejoin:miter; stroke-linecap:butt;
+fill:#ffffff;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="4629" y="1228" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="227" text-anchor="middle">L/2</text>
+<!-- Text -->
+<text xml:space="preserve" x="1795" y="1228" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="227" text-anchor="middle">L/2</text>
+</g>
+</svg>

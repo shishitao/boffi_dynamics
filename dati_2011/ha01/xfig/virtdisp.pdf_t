@@ -1,0 +1,43 @@
+\begin{picture}(0,0)%
+\includegraphics{virtdisp.pdf}%
+\end{picture}%
+\setlength{\unitlength}{4144sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(6316,3489)(304,-1738)
+\put(1441,-1411){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{.69,0,.69}A'}%
+}}}}
+\put(1171,119){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{.69,0,.69}B'}%
+}}}}
+\put(4726,659){\makebox(0,0)[rb]{\smash{{\SetFigFont{12}{14.4}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{.69,0,.69}C}%
+}}}}
+\put(5491,704){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{.69,0,.69}G'${}_2$}%
+}}}}
+\put(4996,164){\makebox(0,0)[b]{\smash{{\SetFigFont{12}{14.4}{\sfdefault}{\mddefault}{\updefault}G${}_2$}}}}
+\put(2251,164){\makebox(0,0)[b]{\smash{{\SetFigFont{12}{14.4}{\sfdefault}{\mddefault}{\updefault}G${}_1$}}}}
+\put(6436,119){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{.69,0,.69}D'}%
+}}}}
+\put(2746,704){\makebox(0,0)[rb]{\smash{{\SetFigFont{12}{14.4}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{.69,0,.69}G'${}_1$}%
+}}}}
+\put(586,1469){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{.69,0,.69}to $\Omega_1$}%
+}}}}
+\put(2701,1469){\makebox(0,0)[rb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{.69,0,.69}to $\Omega_1$}%
+}}}}
+\put(5536,-1411){\makebox(0,0)[rb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{.69,0,.69}$\Omega_2\equiv\textsf{E}$}%
+}}}}
+\put(4051,569){\makebox(0,0)[b]{\smash{{\SetFigFont{12}{14.4}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}C}%
+}}}}
+\put(5761,-1231){\makebox(0,0)[rb]{\smash{{\SetFigFont{12}{14.4}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}E}%
+}}}}
+\put(5761,119){\makebox(0,0)[rb]{\smash{{\SetFigFont{12}{14.4}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}D}%
+}}}}
+\put(541,119){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}B}%
+}}}}
+\put(541,-1231){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\sfdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}A}%
+}}}}
+\end{picture}%

@@ -1,0 +1,499 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: fig2dev Version 3.2 Patchlevel 5e -->
+<!-- CreationDate: Sun Jan  3 14:47:46 2016 -->
+<!-- Magnification: 2.100 -->
+<svg	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="10.9in" height="4.1in"
+	viewBox="-592 -403 13085 4959">
+<g style="stroke-width:.025in; fill:none">
+<!-- Line -->
+<polygon points="11338,1889
+11174,2173
+11502,2173
+11338,1889
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polygon points="0,3779
+-283,3943
+-283,3615
+0,3779
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polygon points="0,0
+-283,163
+-283,-163
+0,0
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="-283,3401
+-283,4157
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="-283,3401
+-472,3590
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="-283,3590
+-472,3779
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="-283,3779
+-472,3968
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="-283,3968
+-472,4157
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="11716,2173
+10960,2173
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="11716,2173
+11527,2362
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="11527,2173
+11338,2362
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="11338,2173
+11149,2362
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="11149,2173
+10960,2362
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="-377,-377
+-377,377
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="-377,-377
+-566,-188
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="-377,-188
+-566,0
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="-377,0
+-566,188
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="-377,188
+-566,377
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="0,3779
+7559,3779
+7559,1889
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="0,0
+0,1889
+11338,1889
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<!--  main dimension line  -->
+<polyline points="188,4346
+3590,4346
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 0 4346 - 3811 4346-->
+<polygon points="3632 4377
+3775 4346
+3632 4314
+3586 4346
+3632 4377
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Arrowhead on XXXpoint 3779 4346 - -31 4346-->
+<polygon points="144 4314
+4 4346
+144 4377
+193 4346
+144 4314
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<!--  tick  -->
+<polyline points="0,4205
+0,4487
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<!--  tick  -->
+<polyline points="3779,4205
+3779,4487
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<!--  main dimension line  -->
+<polyline points="3968,4346
+7370,4346
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 3779 4346 - 7590 4346-->
+<polygon points="7412 4377
+7554 4346
+7412 4314
+7365 4346
+7412 4377
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Arrowhead on XXXpoint 7559 4346 - 3748 4346-->
+<polygon points="3924 4314
+3783 4346
+3924 4377
+3972 4346
+3924 4314
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<!--  tick  -->
+<polyline points="3779,4205
+3779,4487
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<!--  tick  -->
+<polyline points="7559,4205
+7559,4487
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<!--  main dimension line  -->
+<polyline points="7748,4346
+11149,4346
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 7559 4346 - 11370 4346-->
+<polygon points="11191 4377
+11334 4346
+11191 4314
+11145 4346
+11191 4377
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Arrowhead on XXXpoint 11338 4346 - 7527 4346-->
+<polygon points="7703 4314
+7563 4346
+7703 4377
+7752 4346
+7703 4314
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<!--  tick  -->
+<polyline points="7559,4205
+7559,4487
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<!--  tick  -->
+<polyline points="11338,4205
+11338,4487
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<!--  main dimension line  -->
+<polyline points="12283,188
+12283,1700
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 12283 0 - 12283 1921-->
+<polygon points="12251 1742
+12283 1885
+12314 1742
+12283 1696
+12251 1742
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Arrowhead on XXXpoint 12283 1889 - 12283 -31-->
+<polygon points="12314 144
+12283 4
+12251 144
+12283 193
+12314 144
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<!--  tick  -->
+<polyline points="12142,1889
+12424,1889
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<!--  tick  -->
+<polyline points="12142,0
+12424,0
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<!--  main dimension line  -->
+<polyline points="12283,2078
+12283,3590
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 12283 1889 - 12283 3811-->
+<polygon points="12251 3632
+12283 3775
+12314 3632
+12283 3586
+12251 3632
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Arrowhead on XXXpoint 12283 3779 - 12283 1858-->
+<polygon points="12314 2034
+12283 1893
+12251 2034
+12283 2082
+12314 2034
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<!--  tick  -->
+<polyline points="12142,3779
+12424,3779
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<!--  tick  -->
+<polyline points="12142,1889
+12424,1889
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Arc -->
+<path style="stroke:#000000;stroke-width:15;stroke-linecap:butt;fill:#ffffff"
+d="M 7464,1889 A 94 94  0  0  0  7653  1889 " />
+<!-- Circle -->
+<circle cx="0" cy="0" r="94"
+ style="fill:#ffffff;stroke:#000000;stroke-width:15;"/>
+<!-- Circle -->
+<circle cx="0" cy="3779" r="94"
+ style="fill:#ffffff;stroke:#000000;stroke-width:15;"/>
+<!-- Circle -->
+<circle cx="11338" cy="1889" r="94"
+ style="fill:#ffffff;stroke:#000000;stroke-width:15;"/>
+<!-- Circle -->
+<circle cx="3779" cy="3779" r="188"
+ style="fill:#d10000;stroke:#000000;stroke-width:63;"/>
+<!-- Circle -->
+<circle cx="-329" cy="-94" r="48"
+ style="fill:#ffffff;stroke:#000000;stroke-width:15;"/>
+<!-- Circle -->
+<circle cx="-329" cy="94" r="48"
+ style="fill:#ffffff;stroke:#000000;stroke-width:15;"/>
+<!-- Circle -->
+<circle cx="3779" cy="1889" r="188"
+ style="fill:#d10000;stroke:#000000;stroke-width:63;"/>
+<!-- Line -->
+<polyline points="7370,1889
+7748,1889
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+fill:#ffffff;
+"/>
+<!-- Line -->
+<polyline points="3779,1606
+3779,1257
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+fill:#ffffff;
+"/>
+<!-- Arrowhead on XXXpoint 3779 1606 - 3779 1102-->
+<polygon points="3811 1222
+3779 1127
+3748 1222
+3779 1253
+3811 1222
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="3779,3496
+3779,3147
+" style="stroke:#000000;stroke-width:15;
+stroke-linejoin:miter; stroke-linecap:butt;
+fill:#ffffff;
+"/>
+<!-- Arrowhead on XXXpoint 3779 3496 - 3779 2992-->
+<polygon points="3811 3111
+3779 3017
+3748 3111
+3779 3143
+3811 3111
+
+" style="stroke:#000000;stroke-width:15;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Text -->
+<text xml:space="preserve" x="3968" y="1511" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="252" text-anchor="start">x<tspan font-size="168" dy="73">1</tspan><tspan dy="-73"></tspan></text>
+<!-- Text -->
+<text xml:space="preserve" x="3968" y="3401" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="252" text-anchor="start">x<tspan font-size="168" dy="73">2</tspan><tspan dy="-73"></tspan></text>
+<!-- Text -->
+<text xml:space="preserve" x="3590" y="1700" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="252" text-anchor="end">m</text>
+<!-- Text -->
+<text xml:space="preserve" x="3590" y="3590" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="252" text-anchor="end">m</text>
+<!-- Text -->
+<text xml:space="preserve" x="188" y="-94" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="252" text-anchor="start">A</text>
+<!-- Text -->
+<text xml:space="preserve" x="7653" y="1795" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="252" text-anchor="start">B</text>
+<!-- Text -->
+<text xml:space="preserve" x="11527" y="1795" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="252" text-anchor="start">C</text>
+<!-- Text -->
+<text xml:space="preserve" x="188" y="3590" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="252" text-anchor="start">D</text>
+<!-- Line -->
+<!--  text box  -->
+<polygon points="1623,4205
+1623,4487
+2156,4487
+2156,4205
+1623,4205
+" style="stroke:#000000;stroke-width:0;
+stroke-linejoin:miter; stroke-linecap:butt;
+fill:#ffffff;
+"/>
+<!-- Line -->
+<!--  text box  -->
+<polygon points="5402,4205
+5402,4487
+5935,4487
+5935,4205
+5402,4205
+" style="stroke:#000000;stroke-width:0;
+stroke-linejoin:miter; stroke-linecap:butt;
+fill:#ffffff;
+"/>
+<!-- Line -->
+<!--  text box  -->
+<polygon points="9182,4205
+9182,4487
+9715,4487
+9715,4205
+9182,4205
+" style="stroke:#000000;stroke-width:0;
+stroke-linejoin:miter; stroke-linecap:butt;
+fill:#ffffff;
+"/>
+<!-- Line -->
+<!--  text box  -->
+<polygon points="12142,1165
+12424,1165
+12424,724
+12142,724
+12142,1165
+" style="stroke:#000000;stroke-width:0;
+stroke-linejoin:miter; stroke-linecap:butt;
+fill:#ffffff;
+"/>
+<!-- Line -->
+<!--  text box  -->
+<polygon points="12142,3055
+12424,3055
+12424,2614
+12142,2614
+12142,3055
+" style="stroke:#000000;stroke-width:0;
+stroke-linejoin:miter; stroke-linecap:butt;
+fill:#ffffff;
+"/>
+<!-- Text -->
+<!--  fixed text  -->
+<text xml:space="preserve" x="1889" y="4363" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="303" text-anchor="middle">   </text>
+<!-- Text -->
+<!--  fixed text  -->
+<text xml:space="preserve" x="5669" y="4363" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="303" text-anchor="middle">   </text>
+<!-- Text -->
+<!--  fixed text  -->
+<text xml:space="preserve" x="9448" y="4363" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="303" text-anchor="middle">   </text>
+<!-- Text -->
+<!--  fixed text  -->
+<g transform="translate(12300,944) rotate(-90.00021046)" >
+<text xml:space="preserve" x="0" y="0" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="303" text-anchor="middle">  </text>
+</g><!-- Text -->
+<!--  fixed text  -->
+<g transform="translate(12300,2834) rotate(-90.00021046)" >
+<text xml:space="preserve" x="0" y="0" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="303" text-anchor="middle">  </text>
+</g><!-- Text -->
+<text xml:space="preserve" x="1889" y="4440" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="252" text-anchor="middle">2L</text>
+<!-- Text -->
+<text xml:space="preserve" x="5669" y="4440" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="252" text-anchor="middle">2L</text>
+<!-- Text -->
+<text xml:space="preserve" x="9448" y="4440" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="252" text-anchor="middle">2L</text>
+<!-- Text -->
+<g transform="translate(12377,944) rotate(-90.00021046)" >
+<text xml:space="preserve" x="0" y="0" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="252" text-anchor="middle">L</text>
+</g><!-- Text -->
+<g transform="translate(12377,2834) rotate(-90.00021046)" >
+<text xml:space="preserve" x="0" y="0" fill="#000000"  font-family="Times" font-style="normal" font-weight="normal" font-size="252" text-anchor="middle">L</text>
+</g></g>
+</svg>

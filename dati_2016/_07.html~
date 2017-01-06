@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <title>Dynamics of Structures</title>
+    <meta http-equiv="content-type" content="text/html;charset=latin-1"></>
+     <link rel="stylesheet" href="../css/3.13.css" type="text/css"></link>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="banner">
+        <a href="http://www.polimi.it">
+          <img style="border: 0px solid ; width: 158px; height: 65px;"
+            src="../logopolired.png" alt="Politecnico di Milano" ></img>
+        </a>
+        <h1>Dynamics of Structures<br /></h1>
+      </div><!-- banner -->
+      <div id="outer">
+        <div id="left">
+          <h2>2016-04-12</h2>
+        </div>
+        <div class="onwhite" id="content">
+          <h2>Modal Superposition, Matrix Iteration</h2>
+          <p class="first">
+            This class was divided in two parts,
+            <ol>
+              <li> modal superposition (mostly a recapitulation), </li>
+              <li> matrix iteration procedures, efficient numerical
+                techniques for computing all the eigenvalues and
+                eigenvectors needed in a dynamical analysis.
+              </li>
+            </ol>
+          </p><p> 
+            Revisiting the modal superposition procedure, particular
+            attention was given to damping matrix construction and to
+            modal truncation. In modal truncation, approximation
+            effectiveness is different between displacements and
+            internal forces, the latter requiring more modal
+            contributes to be accurately described
+          </p><p class="first">
+            Matrix Iteration is an iterative numerical procedure that
+            permits building a sequence of eigenvalues/eigenvectors,
+            from lower to higher frequencies.
+          </p><p>
+            Proof was given for the convergence of the iterative
+            procedure to the first, or fundamental, eigenvector.
+          </p><p> 
+            Iteration with sweeps and iteration with shifts are two
+            different procedures that can be used to find all the
+            eigenvectors/values of a dynamic system.
+          </p><p> 
+            Inverse Iteration is a numerical technique, based on
+            <em>LU</em> decomposition of <em>K</em>, that can
+            significantly speed up the matrix iteration procedure.
+          </p><p> 
+            Rayleigh Quotient can be applied to discrete systems. We
+            have seen what happens when the shape vector is described
+            by a restricted base, known as Ritz base. A new,
+            <em>reduced</em> eigenproblem in Ritz coordinates must be
+            solved. The Ritz eigenvalues are approximations of
+            structural eigenvalues, the Ritz eigenvectors give place
+            to structural shapes that have all the orthogonality
+            properties that are required for the modal superposition
+            procedure.
+          </p><p>
+            Subspace Iteration is a crossover of Matrix Iteration and
+            Rayleigh-Ritz procedures, and is the procedure of choice
+            for large dynamical systems.
+          </p><p> </p><p>
+          </p><p> </p><p class="first">
+            Material available for this class:
+            <ul>
+              <li>the slides i used for my lesson,
+                <ul>
+                  <li><a href="08/slides0.pdf">part 0</a> and</li>
+                  <li><a href="08/slides1.pdf">part 1</a>,</li>
+                </ul>
+              </li> <li>the printouts for
+                <ul>
+                  <li><a href="08/handout0.pdf">part 0</a> and</li>
+                  <li><a href="08/handout1.pdf">part 1</a>.</li>
+                </ul>
+              </li>
+              <li><a href="../dati_2015/08/exercise1.py">The Python program</a> used to
+                compute the results in the exercise that closed part 0 of
+                today's class.</li>
+            </ul>
+          </p><br></br>
+        </div><!-- content -->
+      </div><!-- outer -->
+      <div id="footer">
+        <table border="0" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="33%" align="left"  ><a href="_06.html">2016-04-08</td>
+            <td width="34%" align="center"><a href="../sd_2016.html">Home</a></td>
+            <td width="33%" align="right" ><a href="_08.html">2016-04-14</a></td>
+          </tr>
+        </table>
+      </div><!-- footer -->
+      <address>
+        <a href="mailto:giacomo.boffi@polimi.it">Giacomo Boffi</a>
+      </address>
+      </div>
+      <!-- Created: Thu Oct 25 20:40:56 CEST 2007 -->
+    </div><!-- container -->
+  </body>
+</html>

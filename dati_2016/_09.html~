@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <title>Dynamics of Structures</title>
+    <meta http-equiv="content-type" content="text/html;charset=latin-1"></>
+     <link rel="stylesheet" href="../css/3.13.css" type="text/css"></link>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="banner">
+        <a href="http://www.polimi.it">
+          <img style="border: 0px solid ; width: 158px; height: 65px;"
+            src="../logopolired.png" alt="Politecnico di Milano" ></img>
+        </a>
+        <h1>Dynamics of Structures<br /></h1>
+      </div><!-- banner -->
+      <div id="outer">
+        <div id="left">
+          <h2>2015-05-26</h2>
+        </div>
+        <div class="onwhite" id="content">
+          <h2>Derived Ritz Vectors</h2>
+          <h2>MDOF Numerical Integration</h2>
+          <h2>Multiple Support Excitation</h2>
+          <p class="first">
+            Today a sort of miscellanea to close the topic of
+            <em>MDOF</em> systems.
+          </p>
+          <ol>
+            <li><h4>Derived Ritz Vectors</h4> The Derived Ritz
+              Vectors follows from a combination of matrix iteration and
+              Gram-Schmidt orthogonalisation.<br></br>
+              Remarkable properties of <em>DRVs</em> are:
+              <ul>
+                <li>orthogonalisation is needed only with respect to
+                  the two previous <em>DRVs</em></li>
+                <li>one of the two sweeping coefficients needed was
+                already computed as a normalization factor in the
+                preceding step</li>
+                <li>the reduced, Ritz coordinates eigenproblem can be
+                easily formulated in canonical form with respect to a
+                tridiagonal matrix</li>
+                <li>the equation of motion for Ritz coordinates can be
+                written with a tridiagonal mass matrix, a unit
+                stiffness matrix and a load vector that has only one
+                coefficient different from zero</li>
+                <li>even for complex load shape, the expansion of load
+                shape in terms of <em>DRVs</em> requires only a few
+                lower terms, removing the requirement for static
+                correction that, for these loadings, is needed in
+                modal superposition procedure</li>
+              </ul>
+            </li>          
+            <li><h4>Algorithms for the Numerical Integration of
+                <em>MDOF</em> systems</h4>
+              Main problem in numerical integration of the equation of
+              motion for a <em>MDOF</em> system is the numerical
+              stability of the algorithm used. In short, only
+              unconditionally stable algorithms can be used.<br></>
+              It turns out that -formally- the algorithms are
+              identical to the algorithms discussed in the context of
+              <em>SDOF</em> systems, with identical numerical
+              coefficients and dimensional scalar factors substituted
+              by corresponding matrices.
+              <ul>
+                <li>the constant acceleration algorithm is
+                unconditionally stable, we discussed a pseudocode
+                listing that implements the c-a algorithm </li>
+                <li>a variation on the linear acceleration algorithm,
+                introduced by Wilson and named Wilson's theta method,
+                is unconditionally stable</li>
+              </ul>
+              As direct numerical integration is usually needed for
+              non-linear system, finally we reviewed the modified
+              Newton-Raphson procedure.
+            </li>
+            <li><h4>Multiple Support Excitation</h4>
+              Multiple support excitation occurs in different cases,
+              e.g., multi-span bridges, vehicles, equipment contained
+              in vibration affected environments, etc.
+
+              We recognized that in the vast majority of cases the
+              equation of motion can be written in terms of the
+              supports' accelerations only.
+            </li>
+          </ol>
+          <p class="first">
+            Material available for this class:
+            <ul>
+              <li><a href="10/slides.pdf">the slides</a> i used for
+		today lesson,</li>
+              <li>a ready to <a href="10/handout.pdf">print
+                  version</a> of the slides,</li>
+              <li>the <a href="10/error_norms.py">program used to compute
+                  the table of error norms</a>, for the eigenvector
+                and DRV expansions of different load vectors,</li>
+
+              <li>the <a href="10/influence_matrix.py">program to compute the
+                  influence matrix</a> for the first example about
+                multiple support excitation (note that you can
+                extract, from the first part of the program, a method
+                to compute the flexibility matrix of a statically
+                determined structure),</li>
+
+              <li>the <a href="10/mse_response.py">program used to
+                  compute the response</a> for a multiple support
+                excitation (note that the program contains an <em>ad
+                  hoc</em> implementation of the assemblage of the global
+                stiffness matrix, valid for straight, multisupported
+                beams),</li>
+              <li><a href="http://nbviewer.ipython.org/urls/dl.dropboxusercontent.com/u/57755729/boffi/dati_2015/10/Static_Correction.ipynb">
+                  a Python notebook exemplifying the static correction procedure and</li>
+              <li><a href="http://nbviewer.ipython.org/urls/dl.dropboxusercontent.com/u/57755729/boffi/dati_2015/10/DRV_example.ipynb">
+                  a Python notebook</a> exemplifying the generation of a DRV sequence.
+              </li><!-- DRV_example.ipynb Static_Correction.ipynb -->
+            </ul>
+          </p><br></br>
+        </div><!-- content -->
+      </div><!-- outer -->
+      <div id="footer">
+        <table border="0" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="33%" align="left"  ><a href="_09.html">2015-05-19</a></td>
+            <td width="34%" align="center"><a href="../sd_2015.html">Home</a></td>
+            <td width="33%" align="right" ><a href="_11.html">2015-06-09</a></td>
+          </tr>
+        </table>
+      </div><!-- footer -->
+      <address>
+        <a href="mailto:giacomo.boffi@polimi.it">Giacomo Boffi</a>
+      </address>
+      </div>
+      <!-- Created: Thu Oct 25 20:40:56 CEST 2007 -->
+    </div><!-- container -->
+  </body>
+</html>

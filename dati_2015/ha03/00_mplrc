@@ -1,0 +1,5 @@
+figure.figsize:    12, 5
+axes.labelsize:  x-large
+xtick.labelsize: large
+ytick.labelsize: large
+figure.facecolor: FCFFFF

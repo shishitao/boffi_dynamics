@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <title>Dynamics of Structures</title>
+    <meta http-equiv="content-type" content="text/html;charset=latin-1"></>
+     <link rel="stylesheet" href="../css/3.13.css" type="text/css"></link>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="banner">
+        <a href="http://www.polimi.it">
+          <img style="border: 0px solid ; width: 158px; height: 65px;"
+            src="../logopolired.png"
+            alt="Politecnico di Milano" ></img>
+        </a>
+        <h1>Dynamics of Structures<br /></h1>
+      </div><!-- banner -->
+      <div id="outer">
+        <div id="left">
+          <h2>2015-05-05</h2>
+        </div>
+        <div class="onwhite" id="content">
+          <h2>Structural Matrices</h2>
+          <p class="first">
+            In this class, we studied the properties of the structural
+            matrices, sketched the restricted part of <em>FEM</em>
+            that is useful to our purposes and introduced the idea of
+            <em>static condensation</em>.
+          </p><p> We defined the mass, damping and stiffness matrices
+            as a mean of writing the equation of dynamic eq. in terms of
+            displacements and their time derivatives.
+          </p><p> We found that the eigenvectors are orthogonal not
+            only with respect to M and K but also to an infinity of
+            other matrices, and we wrote down a formula to generate
+            <em>all</em> the matrices for which orthogonality holds.
+          </p><p> We introduced the <em>flexibility</em> matrix F to
+            open the way to an understanding of the <em>stiffness</em>
+            matrix K, defined both as K=F<sup>-1</sup> and in terms of
+            the force vectors needed to have a series of single unit
+            displacements.
+          </p><p> Having observed that inverting F (or even computing F)
+            for slightly complex structures is not easy, we discussed
+            the little section of the finite element method
+            (<em>FEM</em>) that we need for our purposes: special
+            stress was posed on beam elements and the shape function
+            procedure.
+          </p><p> The procedure for <em>assembling</em> K was
+            explained and applied to an example.
+          </p><p> Mass matrix can be constructed using a
+            <em>consistent</em> approach or by <em>lumping</em>
+            translational masses on the nodes. Advantages and
+            disadvantages of both procedures.
+          </p><p>The static condensation procedure, theory and an example.
+          </p><p>
+          </p><p>
+            Material available for this class:
+            <ul>
+              <li><a href="07/slides.pdf">the slides</a> i used for my lesson</li>
+              <li>a ready to <a href="07/handout.pdf">print version</a> of the
+                  slides.
+            </ul>
+          </p><br></br>
+        </div><!-- content -->
+      </div><!-- outer -->
+      <div id="footer">
+        <table border="0" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="33%" align="left"  ><a href="_06.html">2015-04-21</a></td>
+            <td width="34%" align="center"><a href="../sd_2015.html">Home</a></td>
+            <td width="33%" align="right" ><a href="_08.html">2015-05-12</a></td>
+          </tr>
+        </table>
+      </div><!-- footer -->
+      <address>
+        <a href="mailto:giacomo.boffi@polimi.it">Giacomo Boffi</a>
+      </address>
+      </div>
+      <!-- Created: Thu Oct 25 20:40:56 CEST 2007 -->
+    </div><!-- container -->
+  </body>
+</html>

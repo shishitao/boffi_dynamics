@@ -1,0 +1,65 @@
+<style>
+@font-face {
+    font-family: 'Charis SIL';
+    src: url('fonts/CharisSILEur-R.woff') format('woff');
+}
+@font-face {
+    font-family: 'Architects Daughter';
+    font-style: normal;
+    src: url(https://fonts.gstatic.com/s/architectsdaughter/v6/RXTgOOQ9AAtaVOHxx0IUBM3t7GjCYufj5TXV5VnA2p8.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+.prompt{display: None;}
+div.cell{margin: auto;width:900px;}
+
+div #notebook { /* centre the content */
+    background: #fffaf0;
+    margin: auto;
+    padding: 0em;
+    padding-top: 1em;
+}
+div #notebook_container {width: 960px!important;}
+#notebook li { /* More space between bullet points */
+    margin-top:0.2em;
+}
+
+div.text_cell_render{
+    font-family: "Charis SIL", Cambria,  serif;
+    line-height: 155%;
+    font-size: 130%;
+}
+.CodeMirror{
+    font-family: Consolas, monospace;
+    font-size: 140%;
+    background-color:#fcffff!important;
+}
+
+.output_area {
+    font-family: Consolas,monospace;font-size: 120%;
+    background-color:#fcffff!important;
+    margin-top:0.8em;
+}
+
+div.output_latex{overflow:hidden}
+
+h1 {
+    font-family: 'Architects Daughter', serif;
+    font-size:   48pt!important;
+    text-align:  center;
+    text-shadow: 4px 4px 4px #aaa;
+    padding-bottom: 48pt;
+}
+
+.warning{color: rgb( 240, 20, 20 )}
+</style>
+<script>
+MathJax.Hub.Config({
+    TeX: {extensions: ["AMSmath.js", "begingroup.js"]},
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                },
+    displayAlign: 'center', // Change this to 'center' to center equations.
+    "HTML-CSS": {styles: {'.MathJax_Display': {"margin": 4}}}
+        });
+</script>

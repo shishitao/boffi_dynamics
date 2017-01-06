@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <title>Dynamics of Structures</title>
+    <meta http-equiv="content-type" content="text/html;charset=latin-1"></>
+     <link rel="stylesheet" href="../css/3.13.css" type="text/css"></link>
+  </head>
+  <body>
+    <div id="container">
+      <div id="banner">
+        <a href="http://www.polimi.it">
+          <img style="border: 0px solid ; width: 158px; height: 65px;"
+            src="../logopolired.png" alt="Politecnico di Milano" ></img>
+        </a>
+        <h1><a href="../sd_2016.html">Dynamics of Structures</a></h1>
+      </div><!-- banner -->
+      <div id="outer">
+        <div id="left">
+          <h2>2016-03-31</h2>
+        </div>
+        <div class="onwhite" id="content">
+          <h2>Step by Step Methods</h2>
+          <p class="first">
+            The first part of today's lesson was devoted to the
+            numerical methods for the integration of the equation of
+            motion in the time domain, that we collectively
+            name <i>Step by Step Methods</i>
+          </p>
+          <p>
+            We introduced the concept of the <em>state</em> of a
+            linear or non linear system, and the idea of computing the
+            state of the system at the end of a short time step as a
+            mean to compute, step by step, the response of a SDOF
+            system in an approximate manner.
+          </p>
+          <p>
+            The specific qualities and defects of SbS methods were
+            discussed at some length, especially the cause of errors
+            and the problem of <i>numerical instability</i>.
+          </p>
+          <p>
+            First of all, we discussed the <i>Central Differences
+            Method</i>, an <i>unstable</i> method that appeals the
+            numerical analyst with its semplicity. The method gives
+            also a taste of the structure of step by step solutions,
+            where the end state is expressed in terms of the initial
+            state and the values of the loadings at the extremes of
+            the step.
+          </p>
+          <p>
+            The central differences is an explicit method, next we
+            introduced <em>implicit</em> methods, that can be
+            collected under the name of <em>Newmark's Beta
+            Methods</em>, and we studied in particular the
+            <em>Constant</em> and the <em>Linear Acceleration
+            Methods</em>, the Constant Acceleration being remarkable
+            as it is a <em>stable</em> method of integration.
+          </p>
+
+          <h2>Generalized SDOF Systems</h2>
+          <p class="first">
+	    In the second part, we started yhe study of generalized SDOF systems.
+            Sometimes an articulated rigid body happens to be a single degree of freedom system,
+            sometimes we want to approximate the dynamical behaviour of a deformable,
+            infinite degrees of freedom system with a simple, single degree of freedom
+            <emph>model</emph>.
+          </p>
+	  <p> First, we study the behaviour of assemblages of rigid bodies, connected by
+            bilateral, frictionless constraints and by springs and dampers, when
+            the resulting system has one degree of freedom. Under the hypotesis of small
+            displacements we find the instantaneous motion of every piece of the system,
+            and write the equation of equilibrium (including inertial forces) using the principle
+            of virtual displacements. The concept of generalized characteristic is introduced.
+          </p>
+	  <p> A similar procedure can be applied also to deformable bodies, <emph>assuming</emph>
+            an instantaneous motion that satisfies external constraints and taking into account
+            the internal virtual work in writing the equation of motion. Solving the equation
+            of motion gives the amplitude of the <emph>assumed shape</emph> motion of the
+            deformable body.
+	  </p>	  
+          <h4>Materials available for this class:</h4>
+          <ul>
+            <li>the slides for <a href="04/slides_a.pdf">the first part</a> and 
+	      <a href="04/slides_b.pdf">the second part</a> of the class.</li>
+            <li>a ready to print version of the slides,
+              again <a href="04/handout_a.pdf">the first part</a>
+              and <a href="04/handout_b.pdf">the second part</a>,</li>
+            <li>for the exercise about piecewise exact integration,
+              <ul>
+                <li><a href="http://nbviewer.ipython.org/url/dl.dropboxusercontent.com/u/57755729/boffi/dati_2016/04/PieceWise_Exact_Integration.ipynb">
+                the interactive notebook</a>, following the link
+                you'll see a static rendering but you're free to
+                download the notebook;</li>
+		<li><a href="04/PieceWise_Exact_Integration.pdf">the corresponding PDF</a>;</li>
+	      </ul>
+	    </li>
+	    <li>the exercise about the constant acceleration algorithm,
+	      <ul>
+		<li><a href="http://nbviewer.ipython.org/url/dl.dropboxusercontent.com/u/57755729/boffi/dati_2016/04/Constant_Acceleration.ipynb">
+		    the interactive notebook</a>;
+		</li>
+		<li><a href="04/Constant_Acceleration.pdf">the corresponding PDF</a>;
+		</li>
+	      </ul>
+	    </li>
+	  </ul>
+	</div><!-- content -->
+      </div><!-- outer -->
+      <div id="footer">
+          <table border="0" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="33%" align="left"  ><a href="_03.html">2016-03-18</a></td>
+              <td width="34%" align="center"><a href="../sd_2016.html">Home</a></td>
+              <td width="33%" align="right" ><a href="_05.html">2016-04-07</a></td>
+            </tr>
+          </table>
+      </div><!-- footer -->
+      <address>
+        <a href="mailto:giacomo.boffi@polimi.it">Giacomo Boffi</a>
+      </address>
+      </div>
+      <!-- Created: Thu Oct 25 20:40:56 CEST 2007 -->
+    </div><!-- container -->
+  </body>
+</html>

@@ -1,0 +1,21 @@
+\begin{picture}(0,0)%
+\includegraphics{beam.pdf}%
+\end{picture}%
+\setlength{\unitlength}{4144sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(4794,1390)(349,-515)
+\put(2701, 29){\makebox(0,0)[b]{\smash{{\SetFigFont{11}{13.2}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$EJ=\text{const.},\quad\bar{m}=\text{const.}$}%
+}}}}
+\put(2701,704){\makebox(0,0)[b]{\smash{{\SetFigFont{11}{13.2}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$p(x,t)=p_0\,\sin\omega t$}%
+}}}}
+\put(5086,-16){\makebox(0,0)[lb]{\smash{{\SetFigFont{11}{13.2}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$k=\frac{EJ}{40L^3}$}%
+}}}}
+\put(5086,389){\makebox(0,0)[lb]{\smash{{\SetFigFont{11}{13.2}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$M=12\bar{m}L$}%
+}}}}
+\end{picture}%
