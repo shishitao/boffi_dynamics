@@ -38,6 +38,8 @@ h2 {
   margin:0px;
 }
 
+p + ul { margin-top: -5px; }
+
 img.download {vertical-align:middle;}
 
 /* ----------container to center the layout---------- */
