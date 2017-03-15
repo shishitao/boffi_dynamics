@@ -1,0 +1,28 @@
+{
+  "lines.linewidth": 1.67,
+  "axes.edgecolor": "#bcbcbc",
+  "patch.linewidth": 0.5,
+  "legend.fancybox": true,
+  "axes.color_cycle": [
+    "#348ABD",
+    "#A60628",
+    "#7A68A6",
+    "#467821",
+    "#CF4457",
+    "#188487",
+    "#E24A33"
+  ],
+  "axes.facecolor": "#f8f7f0",
+  "axes.labelsize": "large",
+  "axes.grid": true,
+  "patch.edgecolor": "#f8f7f0",
+  "axes.titlesize": "x-large",
+  "axes.grid": "on",
+  "axes.axisbelow": "True",
+  "grid.color": "#FFFFFF",
+  "grid.linestyle": "-",
+  "grid.linewidth": 2.0,
+  "grid.alpha": 0.60,
+  "figure.facecolor": "#FCFFDC",
+  "examples.directory": ""
+}
