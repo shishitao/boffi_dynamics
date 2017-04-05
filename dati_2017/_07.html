@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <title>Dynamics of Structures</title>
+    <meta http-equiv="content-type" content="text/html;charset=latin-1"></>
+     <link rel="stylesheet" href="../css/3.13.css" type="text/css"></link>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="banner">
+        <a href="http://www.polimi.it">
+          <img style="border: 0px solid ; width: 158px; height: 65px;"
+            src="../logopolired.png" alt="Politecnico di Milano" ></img>
+        </a>
+        <h1>Dynamics of Structures<br /></h1>
+      </div><!-- banner -->
+      <div id="outer">
+        <div id="left">
+          <h2>2017-04-04</h2>
+        </div>
+        <div class="onwhite" id="content">
+          <h2>Truncated Sums, Matrix Iteration</h2>
+          <p class="first">
+            This class was divided in two parts,
+            <ol>
+              <li> truncated summation of modal responses (mostly a
+              recapitulation of modal analysis) and </li>
+              <li> matrix iteration procedures, i.e., efficient
+                numerical techniques for computing all the eigenvalues
+                and eigenvectors needed in a dynamical analysis.
+              </li>
+            </ol>
+          </p><p> 
+            Revisiting the modal superposition procedure, particular
+            attention was given to damping matrix construction and to
+            modal truncation. In modal truncation, approximation
+            effectiveness is different between displacements and
+            internal forces, the latter requiring more modal
+            contributes to be accurately described
+          </p><p class="first">
+            Matrix Iteration is an iterative numerical procedure that
+            permits building a sequence of eigenvalues/eigenvectors,
+            from lower to higher frequencies.
+          </p><p>
+            Proof was given for the convergence of the iterative
+            procedure to the first, or fundamental, eigenvector.
+          </p><p> 
+            Iteration with sweeps and iteration with shifts are two
+            different procedures that can be used to find all the
+            eigenvectors/values of a dynamic system.
+          </p><p> 
+            Inverse Iteration is a numerical technique, based on
+            <em>LU</em> decomposition of <em>K</em>, that can
+            significantly speed up the matrix iteration procedure.
+          </p><p> 
+            Rayleigh Quotient can be applied to discrete systems. We
+            have seen what happens when the shape vector is described
+            by a restricted base, known as Ritz base. A new,
+            <em>reduced</em> eigenproblem in Ritz coordinates must be
+            solved. The Ritz eigenvalues are approximations of
+            structural eigenvalues, the Ritz eigenvectors give place
+            to structural shapes that have all the orthogonality
+            properties that are required for the modal superposition
+            procedure.
+          </p><p> Subspace Iteration is a crossover of Matrix
+            Iteration and Rayleigh-Ritz procedures, and is the
+            procedure of choice for large dynamical systems. At every
+            iteration the Ritz base is changed to have a better
+            agreement between inertial forces and elastic forces.
+          </p><p> </p><p>
+          </p><p> </p><p class="first">
+            Material available for this class:
+            <ul>
+              <li><a href="07/slides.pdf">the slides</a></li>
+              <li><a href="07/handout.pdf">a ready-to-print</a> version of the slides</li>
+              <li><a href="07/exercise1.py">the source code of a Python program</a> I used to
+                compute the results of modal superposition for displacements and forces,</li>
+              <li><a href="http://nbviewer.ipython.org/urls/boffi.github.io/dati_2017/07/subspace.ipynb">an
+                  IPython notebook</a> that gives a demonstration of
+                Subspace Iteration</li>
+            </ul>
+          </p><br></br>
+        </div><!-- content -->
+      </div><!-- outer -->
+      <div id="footer">
+        <table border="0" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="33%" align="left"  ><a href="_07.html">2015-05-05</td>
+            <td width="34%" align="center"><a href="../sd_2015.html">Home</a></td>
+            <td width="33%" align="right" ><a href="_09.html">2015-05-19</a></td>
+          </tr>
+        </table>
+      </div><!-- footer -->
+      <address>
+        <a href="mailto:giacomo.boffi@polimi.it">Giacomo Boffi</a>
+      </address>
+      </div>
+      <!-- Created: Thu Oct 25 20:40:56 CEST 2007 -->
+    </div><!-- container -->
+  </body>
+</html>
