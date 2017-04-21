@@ -18,7 +18,7 @@
       </div><!-- banner -->
       <div id="outer">
         <div id="left">
-          <h2>2014-06-03</h2>
+          <h2>2016-04-21</h2>
         </div>
         <div class="onwhite" id="content">
           <h2>Distributed Masses</h2>
@@ -59,17 +59,17 @@
           <p class="first">
             Material available for this class:
             <ul>
-              <li> <a href="11/slides.pdf">the slides</a>
+              <li> <a href="10/slides.pdf">the slides</a>
                 i used for of my lesson and</li>
-              <li>a <a href="11/handout.pdf">ready to print version</a>
+              <li>a <a href="10/handout.pdf">ready to print version</a>
                 of the same slides.</li>
-              <li> <a href="11/example_slides.pdf">The slides</a> of the exercise on moving load and</li>
-              <li>a <a href="11/example_handout.pdf">ready to print version</a> of the exercise.</li>
-              <li><a href="11/clamped.gp">A script for plotting the cantilever
+              <li> <a href="10/example_slides.pdf">The slides</a> of the exercise on moving load and</li>
+              <li>a <a href="10/example_handout.pdf">ready to print version</a> of the exercise.</li>
+              <li><a href="10/clamped.gp">A script for plotting the cantilever
                   mode shapes</a></li>
-              <li><a href="11/ex1.py">A program</a> to prepare the mass modal expansion
-                functions to be plotted with the help of <a href="11/r_n.gp">small script</a>.</li>
-              <li><a href="11/ex2.py">Another program</a> to prepare the data that figure
+              <li><a href="10/ex1.py">A program</a> to prepare the mass modal expansion
+                functions to be plotted with the help of <a href="10/r_n.gp">small script</a>.</li>
+              <li><a href="10/ex2.py">Another program</a> to prepare the data that figure
                  in the table of the last slide</li>
             </ul>
           </p><br></br>
@@ -78,9 +78,9 @@
       <div id="footer">
         <table border="0" width="100%" cellpadding="0" cellspacing="0">
           <tr>
-            <td width="33%" align="left"  ><a href="_10.html">2014-05-27</a></td>
-            <td width="34%" align="center"><a href="../sd_2014.html">Home</a></td>
-            <td width="33%" align="right" ><a href="_12.html">2014-06-10</a></td>
+            <td width="33%" align="left"  ><a href="_09.html">2016-04-19</a></td>
+            <td width="34%" align="center"><a href="../sd_2016.html">Home</a></td>
+            <td width="33%" align="right" ><a href="_11.html">2016-04-26</a></td>
           </tr>
         </table>
       </div><!-- footer -->
