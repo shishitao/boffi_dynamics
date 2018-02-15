@@ -1,0 +1,45 @@
+\begin{picture}(0,0)%
+\includegraphics{struct02.pdf}%
+\end{picture}%
+\setlength{\unitlength}{4144sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(5370,2827)(53,-2468)
+\put(2116,-511){\makebox(0,0)[rb]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{1,0,0}1}%
+}}}}
+\put(2476,-1816){\makebox(0,0)[b]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{1,0,0}2/3}%
+}}}}
+\put(2341,-2311){\makebox(0,0)[lb]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{1,0,0}4/3}%
+}}}}
+\put(541,-1141){\makebox(0,0)[lb]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{1,0,0}1/3}%
+}}}}
+\put(226,-916){\makebox(0,0)[b]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{1,0,0}2/3}%
+}}}}
+\put(2926,-916){\makebox(0,0)[b]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{1,0,0}2/3}%
+}}}}
+\put(3241,-1186){\makebox(0,0)[lb]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{1,0,0}2/3}%
+}}}}
+\put(5041,-2086){\makebox(0,0)[lb]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{1,0,0}2/3}%
+}}}}
+\put(5086,-1816){\makebox(0,0)[b]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{1,0,0}1/3}%
+}}}}
+\put(5176,-16){\makebox(0,0)[b]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{1,0,0}1}%
+}}}}
+\put(3241,-16){\makebox(0,0)[b]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}-2L/3}%
+}}}}
+\put(3061,-241){\makebox(0,0)[rb]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}-2L/3}%
+}}}}
+\put(1351,254){\makebox(0,0)[b]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}L}%
+}}}}
+\put(361, 29){\makebox(0,0)[rb]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}2L/3}%
+}}}}
+\put(1261,-2086){\makebox(0,0)[rb]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}4L/3}%
+}}}}
+\put(3916,-2041){\makebox(0,0)[rb]{\smash{{\SetFigFont{8}{9.6}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}2L/3}%
+}}}}
+\end{picture}%
