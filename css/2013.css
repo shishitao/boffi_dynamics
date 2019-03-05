@@ -108,3 +108,18 @@ clear:left;
 padding:0px;
 margin:0px;
 text-align: right; }
+
+.button {
+  background-color: #eeb;
+  /* border: black;
+  border: 1px solid black;
+  border-color: black; */
+  color: white;
+  padding: 0px 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  /* font-size: 16px; */
+  margin: 1px 0px;
+  border-radius: 4px;
+}
