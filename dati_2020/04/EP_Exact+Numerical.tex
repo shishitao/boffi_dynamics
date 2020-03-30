@@ -1,0 +1,973 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{EP\_Exact+Numerical}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+        \PY{k+kn}{from} \PY{n+nn}{pylab} \PY{k}{import} \PY{o}{*}
+        \PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fivethirtyeight}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{./00\PYZus{}mplrc}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+        
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}
+        \PY{n}{matplotlib}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figure.figsize}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{12}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]}
+        \PY{n}{matplotlib}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{axes.labelsize}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x\PYZhy{}large}\PY{l+s+s1}{\PYZsq{}}
+        \PY{n}{matplotlib}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{xtick.labelsize}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}  \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{large}\PY{l+s+s1}{\PYZsq{}}
+        \PY{n}{matplotlib}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ytick.labelsize}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}  \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{large}\PY{l+s+s1}{\PYZsq{}}
+        \PY{n}{matplotlib}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figure.facecolor}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{FCFFFF}\PY{l+s+s1}{\PYZsq{}}
+\end{Verbatim}
+
+
+    \section{Exact Integration for an EP SDOF
+System}\label{exact-integration-for-an-ep-sdof-system}
+
+We want to compute the response, using the constant acceleration
+algorithm plus MNR, of an Elasto Plastic (EP) system... but how we can
+confirm or reject our results?
+
+It turns out that computing the exact response of an EP system with a
+single degree of freedom is relatively simple.
+
+Here we discuss a program that computes the analytical solution of our
+problem.
+
+The main building blocks of the program will be two functions that
+compute, for the elastic phase and for the plastic phase, the analytical
+functions that give the displacement and the velocity as functions of
+time.
+
+    \subsection{Elastic response}\label{elastic-response}
+
+We are definining a function that, for a linear dynamic system, returns
+not the displacement or the velocity at a given time, but rather a
+couple of functions of time that we can use afterwards to compute
+displacements and velecities at any time of interest.
+
+The response depends on the parameters of the dynamic system \(m,c,k,\)
+on the initial conditions \(x_0, v_0,\) and on the characteristics of
+the external load.
+
+Here the external load is limited to a linear combination of a cosine
+modulated, a sine modulated (both with the same frequency \(\omega\))
+and a constant force,
+
+\(P(t) = c_C \cos\omega t + c_S \sin\omega t + F,\)
+
+but that's all that is needed for the present problem.
+
+The particular integral being
+
+\(\xi(t) = S \cos\omega t + R \sin\omega t + D,\)
+
+substituting in the equation of motion and equating all the
+corresponding terms gives the undetermined coefficients in \(\xi(t)\),
+then evaluation of the general integral and its time derivative for
+\(t=0\) permits to find the constants in the homogeneous part of the
+integral.
+
+The final step is to define the displacement and the velocity function,
+according to the constants we have determined, and to return these two
+function to the caller
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k}{def} \PY{n+nf}{resp\PYZus{}elas}\PY{p}{(}\PY{n}{m}\PY{p}{,}\PY{n}{c}\PY{p}{,}\PY{n}{k}\PY{p}{,} \PY{n}{cC}\PY{p}{,}\PY{n}{cS}\PY{p}{,}\PY{n}{w}\PY{p}{,} \PY{n}{F}\PY{p}{,} \PY{n}{x0}\PY{p}{,}\PY{n}{v0}\PY{p}{)}\PY{p}{:}
+            \PY{n}{wn2} \PY{o}{=} \PY{n}{k}\PY{o}{/}\PY{n}{m} \PY{p}{;} \PY{n}{wn} \PY{o}{=} \PY{n}{sqrt}\PY{p}{(}\PY{n}{wn2}\PY{p}{)} \PY{p}{;} \PY{n}{beta} \PY{o}{=} \PY{n}{w}\PY{o}{/}\PY{n}{wn}
+            \PY{n}{z} \PY{o}{=} \PY{n}{c}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{m}\PY{o}{*}\PY{n}{wn}\PY{p}{)}
+            \PY{n}{wd} \PY{o}{=} \PY{n}{wn}\PY{o}{*}\PY{n}{sqrt}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{z}\PY{o}{*}\PY{n}{z}\PY{p}{)}
+            \PY{c+c1}{\PYZsh{} xi(t) = R sin(w t) + S cos(w t) + D}
+            \PY{n}{det} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{1.}\PY{o}{\PYZhy{}}\PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{+}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{beta}\PY{o}{*}\PY{n}{z}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}
+            \PY{n}{R} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{cS} \PY{o}{+} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{beta}\PY{o}{*}\PY{n}{z}\PY{p}{)}\PY{o}{*}\PY{n}{cC}\PY{p}{)}\PY{o}{/}\PY{n}{det}\PY{o}{/}\PY{n}{k}
+            \PY{n}{S} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{beta}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{cC} \PY{o}{\PYZhy{}} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{beta}\PY{o}{*}\PY{n}{z}\PY{p}{)}\PY{o}{*}\PY{n}{cS}\PY{p}{)}\PY{o}{/}\PY{n}{det}\PY{o}{/}\PY{n}{k}
+            \PY{n}{D} \PY{o}{=} \PY{n}{F}\PY{o}{/}\PY{n}{k}
+            \PY{n}{A} \PY{o}{=} \PY{n}{x0}\PY{o}{\PYZhy{}}\PY{n}{S}\PY{o}{\PYZhy{}}\PY{n}{D}
+            \PY{n}{B} \PY{o}{=} \PY{p}{(}\PY{n}{v0}\PY{o}{+}\PY{n}{z}\PY{o}{*}\PY{n}{wn}\PY{o}{*}\PY{n}{A}\PY{o}{\PYZhy{}}\PY{n}{w}\PY{o}{*}\PY{n}{R}\PY{p}{)}\PY{o}{/}\PY{n}{wd}
+            
+            \PY{k}{def} \PY{n+nf}{x}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{:}
+                \PY{k}{return} \PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{z}\PY{o}{*}\PY{n}{wn}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{A}\PY{o}{*}\PY{n}{cos}\PY{p}{(}\PY{n}{wd}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{o}{+}\PY{n}{B}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{wd}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{p}{)}\PY{o}{+}\PY{n}{R}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{w}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{o}{+}\PY{n}{S}\PY{o}{*}\PY{n}{cos}\PY{p}{(}\PY{n}{w}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{o}{+}\PY{n}{D}
+            
+            \PY{k}{def} \PY{n+nf}{v}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{:}
+                \PY{k}{return} \PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{z}\PY{o}{*}\PY{n}{wn}\PY{o}{*}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{z}\PY{o}{*}\PY{n}{wn}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{A}\PY{o}{*}\PY{n}{cos}\PY{p}{(}\PY{n}{wd}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{o}{+}\PY{n}{B}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{wd}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{p}{)}
+                          \PY{o}{+}\PY{n}{wd}\PY{o}{*}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{z}\PY{o}{*}\PY{n}{wn}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{B}\PY{o}{*}\PY{n}{cos}\PY{p}{(}\PY{n}{wd}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{A}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{wd}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{p}{)}
+                          \PY{o}{+}\PY{n}{w}\PY{o}{*}\PY{p}{(}\PY{n}{R}\PY{o}{*}\PY{n}{cos}\PY{p}{(}\PY{n}{w}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{S}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{w}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+            \PY{k}{return} \PY{n}{x}\PY{p}{,}\PY{n}{v}   
+\end{Verbatim}
+
+
+    \subsection{Plastic response}\label{plastic-response}
+
+In this case the equation of motion is
+
+\(m\ddot x + c \dot x = P(t),\)
+
+the homogeneous response is
+
+\(x(t)=A\exp(-\frac{c}{m}t)+B,\)
+
+and the particular integral, for a load described as in the previous
+case, is (slightly different...)
+
+\(\xi(t) = S \cos\omega t + R \sin\omega t + Dt.\)
+
+Having computed \(R, S,\) and \(D\) from substituting \(\xi\) in the
+equation of motion, \(A\) and \(B\) by imposing the initial
+conditions,we can define the displacement and velocity functions and,
+finally, return these two functions to the caller.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k}{def} \PY{n+nf}{resp\PYZus{}yield}\PY{p}{(}\PY{n}{m}\PY{p}{,}\PY{n}{c}\PY{p}{,} \PY{n}{cC}\PY{p}{,}\PY{n}{cS}\PY{p}{,}\PY{n}{w}\PY{p}{,} \PY{n}{F}\PY{p}{,} \PY{n}{x0}\PY{p}{,}\PY{n}{v0}\PY{p}{)}\PY{p}{:}
+            \PY{c+c1}{\PYZsh{} csi(t) = R sin(w t) + S cos(w t) + Q t}
+            \PY{n}{Q} \PY{o}{=} \PY{n}{F}\PY{o}{/}\PY{n}{c}
+            \PY{n}{det} \PY{o}{=} \PY{n}{w}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{p}{(}\PY{n}{c}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{+}\PY{n}{w}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{m}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
+            \PY{n}{R} \PY{o}{=} \PY{p}{(}\PY{o}{+}\PY{n}{w}\PY{o}{*}\PY{n}{c}\PY{o}{*}\PY{n}{cC}\PY{o}{\PYZhy{}}\PY{n}{w}\PY{o}{*}\PY{n}{w}\PY{o}{*}\PY{n}{m}\PY{o}{*}\PY{n}{cS}\PY{p}{)}\PY{o}{/}\PY{n}{det}
+            \PY{n}{S} \PY{o}{=} \PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{w}\PY{o}{*}\PY{n}{c}\PY{o}{*}\PY{n}{cS}\PY{o}{\PYZhy{}}\PY{n}{w}\PY{o}{*}\PY{n}{w}\PY{o}{*}\PY{n}{m}\PY{o}{*}\PY{n}{cC}\PY{p}{)}\PY{o}{/}\PY{n}{det}
+            \PY{c+c1}{\PYZsh{} x(t) = A exp(\PYZhy{}c t/m) + B + R sin(w t) + S cos(w t) + Q t}
+            \PY{c+c1}{\PYZsh{} v(t) = \PYZhy{} c A/m exp(\PYZhy{}c t/m) + w R cos(w t) \PYZhy{} w S sin(w t) + Q}
+            \PY{c+c1}{\PYZsh{}}
+            \PY{c+c1}{\PYZsh{} v(0) = \PYZhy{}c A / m + w R + Q = v0}
+            \PY{n}{A} \PY{o}{=} \PY{n}{m}\PY{o}{*}\PY{p}{(}\PY{n}{w}\PY{o}{*}\PY{n}{R} \PY{o}{+} \PY{n}{Q} \PY{o}{\PYZhy{}} \PY{n}{v0}\PY{p}{)}\PY{o}{/}\PY{n}{c}
+            \PY{c+c1}{\PYZsh{} x(0) = A + B + S = x0}
+            \PY{n}{B} \PY{o}{=} \PY{n}{x0} \PY{o}{\PYZhy{}} \PY{n}{A} \PY{o}{\PYZhy{}} \PY{n}{S}
+            
+            \PY{k}{def} \PY{n+nf}{x}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{:}
+                \PY{k}{return} \PY{n}{A}\PY{o}{*}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{c}\PY{o}{*}\PY{n}{t}\PY{o}{/}\PY{n}{m}\PY{p}{)}\PY{o}{+}\PY{n}{B}\PY{o}{+}\PY{n}{R}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{w}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{o}{+}\PY{n}{S}\PY{o}{*}\PY{n}{cos}\PY{p}{(}\PY{n}{w}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{o}{+}\PY{n}{Q}\PY{o}{*}\PY{n}{t}
+            \PY{k}{def} \PY{n+nf}{v}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{:}
+                \PY{k}{return} \PY{o}{\PYZhy{}}\PY{n}{c}\PY{o}{*}\PY{n}{A}\PY{o}{*}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{c}\PY{o}{*}\PY{n}{t}\PY{o}{/}\PY{n}{m}\PY{p}{)}\PY{o}{/}\PY{n}{m}\PY{o}{+}\PY{n}{w}\PY{o}{*}\PY{n}{R}\PY{o}{*}\PY{n}{cos}\PY{p}{(}\PY{n}{w}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{w}\PY{o}{*}\PY{n}{S}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{w}\PY{o}{*}\PY{n}{t}\PY{p}{)}\PY{o}{+}\PY{n}{Q}
+            
+            \PY{k}{return} \PY{n}{x}\PY{p}{,}\PY{n}{v}
+\end{Verbatim}
+
+
+    \subsubsection{An utility function}\label{an-utility-function}
+
+We need to find when
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  the spring yields
+\item
+  the velocity is zero
+\end{enumerate}
+
+to individuate the three ranges of different behaviour
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  elastic
+\item
+  plastic
+\item
+  elastic, with permanent deformation.
+\end{enumerate}
+
+We can use the simple and robust algorithm of \emph{bisection} to find
+the roots for
+
+\(x_{el}(t)=x_y \text{ and } \dot{x}_{ep}(t)=0\).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{k}{def} \PY{n+nf}{bisect}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{n}{val}\PY{p}{,}\PY{n}{x0}\PY{p}{,}\PY{n}{x1}\PY{p}{)}\PY{p}{:}
+            \PY{n}{h}  \PY{o}{=} \PY{p}{(}\PY{n}{x0}\PY{o}{+}\PY{n}{x1}\PY{p}{)}\PY{o}{/}\PY{l+m+mf}{2.0}
+            \PY{n}{fh} \PY{o}{=} \PY{n}{f}\PY{p}{(}\PY{n}{h}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{val}
+            \PY{k}{if} \PY{n+nb}{abs}\PY{p}{(}\PY{n}{fh}\PY{p}{)}\PY{o}{\PYZlt{}}\PY{l+m+mf}{1e\PYZhy{}8} \PY{p}{:} \PY{k}{return} \PY{n}{h}
+            \PY{n}{f0} \PY{o}{=} \PY{n}{f}\PY{p}{(}\PY{n}{x0}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{val}
+            \PY{k}{if} \PY{n}{f0}\PY{o}{*}\PY{n}{fh} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0} \PY{p}{:} 
+                \PY{k}{return} \PY{n}{bisect}\PY{p}{(}\PY{n}{f}\PY{p}{,} \PY{n}{val}\PY{p}{,} \PY{n}{h}\PY{p}{,} \PY{n}{x1}\PY{p}{)}
+            \PY{k}{else}\PY{p}{:}
+                \PY{k}{return} \PY{n}{bisect}\PY{p}{(}\PY{n}{f}\PY{p}{,} \PY{n}{val}\PY{p}{,} \PY{n}{x0}\PY{p}{,} \PY{n}{h}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsection{The system parameters}\label{the-system-parameters}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{mass} \PY{o}{=} \PY{l+m+mf}{1000.}   \PY{c+c1}{\PYZsh{} kg}
+        \PY{n}{k}    \PY{o}{=} \PY{l+m+mf}{40000.}  \PY{c+c1}{\PYZsh{} N/m}
+        \PY{n}{zeta} \PY{o}{=} \PY{l+m+mf}{0.03}    \PY{c+c1}{\PYZsh{} damping ratio}
+        \PY{n}{fy}   \PY{o}{=} \PY{l+m+mf}{2500.}   \PY{c+c1}{\PYZsh{} N}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Limit displacement Uy =}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{fy}\PY{o}{*}\PY{l+m+mi}{1000}\PY{o}{/}\PY{n}{k}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mm}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Limit displacement Uy = 62.5 mm
+
+    \end{Verbatim}
+
+    \subsection{Derived quantities}\label{derived-quantities}
+
+The damping coefficient \(c\) and the first yielding displacement,
+\(x_y\).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{damp} \PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{zeta}\PY{o}{*}\PY{n}{sqrt}\PY{p}{(}\PY{n}{k}\PY{o}{*}\PY{n}{mass}\PY{p}{)}
+         \PY{n}{xy} \PY{o}{=} \PY{n}{fy}\PY{o}{/}\PY{n}{k}    \PY{c+c1}{\PYZsh{} m}
+\end{Verbatim}
+
+
+    \subsection{Load definition}\label{load-definition}
+
+Our load is a half-sine impulse
+
+\(p(t)=\begin{cases}p_0\sin(\frac{\pi t}{t_1})&0\leq t\leq t_1,\\\
+ 0&\text{otherwise.}\end{cases}\)
+
+In our exercise
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{t1} \PY{o}{=} \PY{l+m+mf}{0.3}     \PY{c+c1}{\PYZsh{} s}
+         \PY{n}{w}  \PY{o}{=} \PY{n}{pi}\PY{o}{/}\PY{n}{t1}   \PY{c+c1}{\PYZsh{} rad/s}
+         \PY{n}{Po} \PY{o}{=} \PY{l+m+mf}{6000.}   \PY{c+c1}{\PYZsh{} N}
+\end{Verbatim}
+
+
+    \subsection{The actual computations}\label{the-actual-computations}
+
+\subsubsection{Elastic, initial conditions, get system
+functions}\label{elastic-initial-conditions-get-system-functions}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{x0}\PY{o}{=}\PY{l+m+mf}{0.0}     \PY{c+c1}{\PYZsh{} m}
+         \PY{n}{v0}\PY{o}{=}\PY{l+m+mf}{0.0}     \PY{c+c1}{\PYZsh{} m/s}
+         \PY{n}{x\PYZus{}next}\PY{p}{,} \PY{n}{v\PYZus{}next} \PY{o}{=} \PY{n}{resp\PYZus{}elas}\PY{p}{(}\PY{n}{mass}\PY{p}{,}\PY{n}{damp}\PY{p}{,}\PY{n}{k}\PY{p}{,} \PY{l+m+mf}{0.0}\PY{p}{,}\PY{n}{Po}\PY{p}{,}\PY{n}{w}\PY{p}{,} \PY{l+m+mf}{0.0}\PY{p}{,} \PY{n}{x0}\PY{p}{,}\PY{n}{v0}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsubsection{Yielding time is}\label{yielding-time-is}
+
+The time of yielding is found solving the equation
+\(x_\text{next}(t) = x_y\)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{t\PYZus{}yield} \PY{o}{=} \PY{n}{bisect}\PY{p}{(}\PY{n}{x\PYZus{}next}\PY{p}{,} \PY{n}{xy}\PY{p}{,} \PY{l+m+mf}{0.0}\PY{p}{,} \PY{n}{t1}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{t\PYZus{}yield}\PY{p}{,} \PY{n}{x\PYZus{}next}\PY{p}{(}\PY{n}{t\PYZus{}yield}\PY{p}{)}\PY{o}{*}\PY{n}{k}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+0.2032657027244568 2500.0000921877736
+
+    \end{Verbatim}
+
+    \subsubsection{Forced response in elastic range
+is}\label{forced-response-in-elastic-range-is}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{t\PYZus{}el} \PY{o}{=} \PY{n}{linspace}\PY{p}{(} \PY{l+m+mf}{0.0}\PY{p}{,} \PY{n}{t\PYZus{}yield}\PY{p}{,} \PY{l+m+mi}{201}\PY{p}{)}
+         \PY{n}{x\PYZus{}el} \PY{o}{=} \PY{n}{vectorize}\PY{p}{(}\PY{n}{x\PYZus{}next}\PY{p}{)}\PY{p}{(}\PY{n}{t\PYZus{}el}\PY{p}{)}
+         \PY{n}{v\PYZus{}el} \PY{o}{=} \PY{n}{vectorize}\PY{p}{(}\PY{n}{v\PYZus{}next}\PY{p}{)}\PY{p}{(}\PY{n}{t\PYZus{}el}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+         \PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
+         \PY{n}{plot}\PY{p}{(}\PY{n}{t\PYZus{}el}\PY{p}{,}\PY{n}{x\PYZus{}el}\PY{p}{,}
+              \PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.25}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{xy}\PY{p}{,}\PY{n}{xy}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+              \PY{p}{(}\PY{n}{t\PYZus{}yield}\PY{p}{,}\PY{n}{t\PYZus{}yield}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.0699}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}x\PYZus{}}\PY{l+s+si}{\PYZob{}el\PYZcb{}}\PY{l+s+s2}{(t)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Time, s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Displacement, m}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+         \PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{plot}\PY{p}{(}\PY{n}{t\PYZus{}el}\PY{p}{,}\PY{n}{v\PYZus{}el}\PY{p}{)}
+         \PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdl{}}\PY{l+s+s2}{\PYZbs{}}\PY{l+s+s2}{dot x\PYZus{}}\PY{l+s+si}{\PYZob{}el\PYZcb{}}\PY{l+s+s2}{(t)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Time, s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Velocity, m/s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}14}]:} Text(0,0.5,'Velocity, m/s')
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{EP_Exact+Numerical_files/EP_Exact+Numerical_19_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{EP_Exact+Numerical_files/EP_Exact+Numerical_19_2.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \subsubsection{Preparing for EP
+response}\label{preparing-for-ep-response}
+
+First, the system state at \(t_y\) is the initial condition for the EP
+response
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{x0}\PY{o}{=}\PY{n}{x\PYZus{}next}\PY{p}{(}\PY{n}{t\PYZus{}yield}\PY{p}{)}
+         \PY{n}{v0}\PY{o}{=}\PY{n}{v\PYZus{}next}\PY{p}{(}\PY{n}{t\PYZus{}yield}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{x0}\PY{p}{,} \PY{n}{v0}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+0.06250000230469434 0.7097432496991541
+
+    \end{Verbatim}
+
+    now, the load must be expressed in function of a \emph{restarted time},
+
+\begin{verbatim}
+$\tau=t-t_y\;\rightarrow\;t=\tau+t_y\;\rightarrow\;\sin(\omega t)=\sin(\omega\tau+\omega t_y)$
+\end{verbatim}
+
+\begin{verbatim}
+$\rightarrow\;\sin(\omega t)=\sin(\omega\tau)\cos(\omega t_y)+\cos(\omega\tau)\sin(\omega t_y)$
+\end{verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{cS} \PY{o}{=} \PY{n}{Po}\PY{o}{*}\PY{n}{cos}\PY{p}{(}\PY{n}{w}\PY{o}{*}\PY{n}{t\PYZus{}yield}\PY{p}{)}
+         \PY{n}{cC} \PY{o}{=} \PY{n}{Po}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{w}\PY{o}{*}\PY{n}{t\PYZus{}yield}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{Po}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{w}\PY{o}{*}\PY{l+m+mf}{0.55}\PY{p}{)}\PY{p}{,} \PY{n}{cS}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{w}\PY{o}{*}\PY{p}{(}\PY{l+m+mf}{0.55}\PY{o}{\PYZhy{}}\PY{n}{t\PYZus{}yield}\PY{p}{)}\PY{p}{)}\PY{o}{+}\PY{n}{cC}\PY{o}{*}\PY{n}{cos}\PY{p}{(}\PY{n}{w}\PY{o}{*}\PY{p}{(}\PY{l+m+mf}{0.55}\PY{o}{\PYZhy{}}\PY{n}{t\PYZus{}yield}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+-2999.999999999998 -2999.999999999996
+
+    \end{Verbatim}
+
+    Now we generate the displacement and velocity functions for the yielded
+phase, please note that the yielded spring still exerts a constant force
+\(f_y\) on the mass, and that this fact must be (and it is) taken into
+account.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{x\PYZus{}next}\PY{p}{,} \PY{n}{v\PYZus{}next} \PY{o}{=} \PY{n}{resp\PYZus{}yield}\PY{p}{(}\PY{n}{mass}\PY{p}{,} \PY{n}{damp}\PY{p}{,}    \PY{n}{cC}\PY{p}{,}\PY{n}{cS}\PY{p}{,}\PY{n}{w}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{fy}\PY{p}{,} \PY{n}{x0}\PY{p}{,}\PY{n}{v0}\PY{p}{)}
+\end{Verbatim}
+
+
+    At this point I must confess that I have already peeked the numerical
+solution, hence I know that the velocity at \(t=t_1\) is still greater
+than 0 and I know that the current solution is valid in the interval
+\(t_y\leq t\leq t_1\).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{t\PYZus{}y1} \PY{o}{=} \PY{n}{linspace}\PY{p}{(}\PY{n}{t\PYZus{}yield}\PY{p}{,} \PY{n}{t1}\PY{p}{,} \PY{l+m+mi}{101}\PY{p}{)}
+         \PY{n}{x\PYZus{}y1} \PY{o}{=} \PY{n}{vectorize}\PY{p}{(}\PY{n}{x\PYZus{}next}\PY{p}{)}\PY{p}{(}\PY{n}{t\PYZus{}y1}\PY{o}{\PYZhy{}}\PY{n}{t\PYZus{}yield}\PY{p}{)}
+         \PY{n}{v\PYZus{}y1} \PY{o}{=} \PY{n}{vectorize}\PY{p}{(}\PY{n}{v\PYZus{}next}\PY{p}{)}\PY{p}{(}\PY{n}{t\PYZus{}y1}\PY{o}{\PYZhy{}}\PY{n}{t\PYZus{}yield}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
+         \PY{n}{plot}\PY{p}{(}\PY{n}{t\PYZus{}el}\PY{p}{,}\PY{n}{x\PYZus{}el}\PY{p}{,} \PY{n}{t\PYZus{}y1}\PY{p}{,}\PY{n}{x\PYZus{}y1}\PY{p}{,}
+              \PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.25}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{xy}\PY{p}{,}\PY{n}{xy}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+              \PY{p}{(}\PY{n}{t\PYZus{}yield}\PY{p}{,}\PY{n}{t\PYZus{}yield}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.0699}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Time, s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Displacement, m}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+         \PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}
+         \PY{n}{plot}\PY{p}{(}\PY{n}{t\PYZus{}el}\PY{p}{,} \PY{n}{v\PYZus{}el}\PY{p}{,}  \PY{n}{t\PYZus{}y1}\PY{p}{,} \PY{n}{v\PYZus{}y1}\PY{p}{)}
+         \PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Time, s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Velocity, m/s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}19}]:} Text(0,0.5,'Velocity, m/s')
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{EP_Exact+Numerical_files/EP_Exact+Numerical_28_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{EP_Exact+Numerical_files/EP_Exact+Numerical_28_2.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    In the next phase, still it is \(\dot x> 0\) so that the spring is still
+yielding, but now \(p(t)=0\), so we must compute two new state
+functions, starting as usual from the initial conditions (note that the
+yielding force is still applied)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{x0} \PY{o}{=} \PY{n}{x\PYZus{}next}\PY{p}{(}\PY{n}{t1}\PY{o}{\PYZhy{}}\PY{n}{t\PYZus{}yield}\PY{p}{)}
+         \PY{n}{v0} \PY{o}{=} \PY{n}{v\PYZus{}next}\PY{p}{(}\PY{n}{t1}\PY{o}{\PYZhy{}}\PY{n}{t\PYZus{}yield}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{x0}\PY{p}{,} \PY{n}{v0}\PY{p}{)}
+         \PY{n}{x\PYZus{}next}\PY{p}{,} \PY{n}{v\PYZus{}next} \PY{o}{=} \PY{n}{resp\PYZus{}yield}\PY{p}{(}\PY{n}{mass}\PY{p}{,} \PY{n}{damp}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{w}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{fy}\PY{p}{,} \PY{n}{x0}\PY{p}{,} \PY{n}{v0}\PY{p}{)}
+         
+         \PY{n}{t2} \PY{o}{=} \PY{n}{t1} \PY{o}{+} \PY{n}{bisect}\PY{p}{(} \PY{n}{v\PYZus{}next}\PY{p}{,} \PY{l+m+mf}{0.0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mf}{0.3}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{t2}\PY{p}{)}
+         \PY{n}{t\PYZus{}y2} \PY{o}{=} \PY{n}{linspace}\PY{p}{(} \PY{n}{t1}\PY{p}{,} \PY{n}{t2}\PY{p}{,} \PY{l+m+mi}{101}\PY{p}{)}
+         \PY{n}{x\PYZus{}y2} \PY{o}{=} \PY{n}{vectorize}\PY{p}{(}\PY{n}{x\PYZus{}next}\PY{p}{)}\PY{p}{(}\PY{n}{t\PYZus{}y2}\PY{o}{\PYZhy{}}\PY{n}{t1}\PY{p}{)}
+         \PY{n}{v\PYZus{}y2} \PY{o}{=} \PY{n}{vectorize}\PY{p}{(}\PY{n}{v\PYZus{}next}\PY{p}{)}\PY{p}{(}\PY{n}{t\PYZus{}y2}\PY{o}{\PYZhy{}}\PY{n}{t1}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{x\PYZus{}next}\PY{p}{(}\PY{n}{t2}\PY{o}{\PYZhy{}}\PY{n}{t1}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+0.13520933022261195 0.7099968785770994
+0.5697131395339965
+0.22932407805445898
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}
+         \PY{n}{plot}\PY{p}{(}\PY{n}{t\PYZus{}el}\PY{p}{,}\PY{n}{x\PYZus{}el}\PY{p}{,} \PY{n}{t\PYZus{}y1}\PY{p}{,}\PY{n}{x\PYZus{}y1}\PY{p}{,} \PY{n}{t\PYZus{}y2}\PY{p}{,} \PY{n}{x\PYZus{}y2}\PY{p}{,}
+              \PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.25}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{xy}\PY{p}{,}\PY{n}{xy}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+              \PY{p}{(}\PY{n}{t\PYZus{}yield}\PY{p}{,}\PY{n}{t\PYZus{}yield}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.0699}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Time, s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Displacement, m}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+         \PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{)}
+         \PY{n}{plot}\PY{p}{(}\PY{n}{t\PYZus{}el}\PY{p}{,} \PY{n}{v\PYZus{}el}\PY{p}{,}  \PY{n}{t\PYZus{}y1}\PY{p}{,} \PY{n}{v\PYZus{}y1}\PY{p}{,} \PY{n}{t\PYZus{}y2}\PY{p}{,} \PY{n}{v\PYZus{}y2}\PY{p}{)}
+         \PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Time, s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Velocity, m/s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}21}]:} Text(0,0.5,'Velocity, m/s')
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{EP_Exact+Numerical_files/EP_Exact+Numerical_31_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{EP_Exact+Numerical_files/EP_Exact+Numerical_31_2.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \subsubsection{Elastic unloading}\label{elastic-unloading}
+
+The only point worth commenting is the constant force that we apply to
+our system.
+
+The force-displacement relationship for an EP spring is
+
+\(f_\text{E} = k(x-x_\text{pl})= k x - k (x_\text{max}-x_y)\)
+
+taking the negative, constant part of the last expression into the right
+member of the equation of equilibrium we have a constant term, as
+follows
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{x0} \PY{o}{=} \PY{n}{x\PYZus{}next}\PY{p}{(}\PY{n}{t2}\PY{o}{\PYZhy{}}\PY{n}{t1}\PY{p}{)} \PY{p}{;} \PY{n}{v0} \PY{o}{=} \PY{l+m+mf}{0.0}
+         \PY{n}{x\PYZus{}next}\PY{p}{,} \PY{n}{v\PYZus{}next} \PY{o}{=} \PY{n}{resp\PYZus{}elas}\PY{p}{(}\PY{n}{mass}\PY{p}{,}\PY{n}{damp}\PY{p}{,}\PY{n}{k}\PY{p}{,} \PY{l+m+mf}{0.0}\PY{p}{,}\PY{l+m+mf}{0.0}\PY{p}{,}\PY{n}{w}\PY{p}{,} \PY{n}{k}\PY{o}{*}\PY{n}{x0}\PY{o}{\PYZhy{}}\PY{n}{fy}\PY{p}{,} \PY{n}{x0}\PY{p}{,}\PY{n}{v0}\PY{p}{)}
+         \PY{n}{t\PYZus{}e2} \PY{o}{=} \PY{n}{linspace}\PY{p}{(}\PY{n}{t2}\PY{p}{,}\PY{l+m+mf}{4.0}\PY{p}{,}\PY{l+m+mi}{201}\PY{p}{)}
+         \PY{n}{x\PYZus{}e2} \PY{o}{=} \PY{n}{vectorize}\PY{p}{(}\PY{n}{x\PYZus{}next}\PY{p}{)}\PY{p}{(}\PY{n}{t\PYZus{}e2}\PY{o}{\PYZhy{}}\PY{n}{t2}\PY{p}{)}
+         \PY{n}{v\PYZus{}e2} \PY{o}{=} \PY{n}{vectorize}\PY{p}{(}\PY{n}{v\PYZus{}next}\PY{p}{)}\PY{p}{(}\PY{n}{t\PYZus{}e2}\PY{o}{\PYZhy{}}\PY{n}{t2}\PY{p}{)}
+\end{Verbatim}
+
+
+    now we are ready to plot the whole response
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}23}]:} \PY{c+c1}{\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+         \PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{7}\PY{p}{)} \PY{p}{;}
+         \PY{n}{plot}\PY{p}{(}\PY{n}{t\PYZus{}el}\PY{p}{,} \PY{n}{x\PYZus{}el}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+              \PY{n}{t\PYZus{}y1}\PY{p}{,} \PY{n}{x\PYZus{}y1}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+              \PY{n}{t\PYZus{}y2}\PY{p}{,} \PY{n}{x\PYZus{}y2}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+              \PY{n}{t\PYZus{}e2}\PY{p}{,} \PY{n}{x\PYZus{}e2}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+              \PY{p}{(}\PY{l+m+mf}{0.6}\PY{p}{,} \PY{l+m+mf}{4.0}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x0}\PY{o}{\PYZhy{}}\PY{n}{xy}\PY{p}{,} \PY{n}{x0}\PY{o}{\PYZhy{}}\PY{n}{xy}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{In blue: elastic phases.}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}
+               \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{In red: yielding phases.}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}
+               \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Dashed: permanent plastic deformation.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Time, s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Displacement, m}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}23}]:} Text(0,0.5,'Displacement, m')
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{EP_Exact+Numerical_files/EP_Exact+Numerical_35_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \subsection{Numerical solution}\label{numerical-solution}
+
+first, we need the load function
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}24}]:} \PY{k}{def} \PY{n+nf}{make\PYZus{}p}\PY{p}{(}\PY{n}{p0}\PY{p}{,}\PY{n}{t1}\PY{p}{)}\PY{p}{:}
+           \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}make\PYZus{}p(p0,t1) returns a 1/2 sine impulse load function, p(t)\PYZdq{}\PYZdq{}\PYZdq{}}
+           \PY{k}{def} \PY{n+nf}{p}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdq{}}
+             \PY{k}{if} \PY{n}{t}\PY{o}{\PYZlt{}}\PY{n}{t1}\PY{p}{:}
+               \PY{k}{return} \PY{n}{p0}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{n}{t}\PY{o}{*}\PY{n}{pi}\PY{o}{/}\PY{n}{t1}\PY{p}{)}
+             \PY{k}{else}\PY{p}{:}
+               \PY{k}{return} \PY{l+m+mf}{0.0}
+           \PY{k}{return} \PY{n}{p}
+\end{Verbatim}
+
+
+    and also a function that, given the displacement, the velocity and the
+total plastic deformation, returns the stiffness and the new p.d.; this
+function is defined in terms of the initial stiffness and the yielding
+load
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{k}{def} \PY{n+nf}{make\PYZus{}kt}\PY{p}{(}\PY{n}{k}\PY{p}{,}\PY{n}{fy}\PY{p}{)}\PY{p}{:}
+           \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{make\PYZus{}kt(k,fy) returns a function kt(u,v,up) returning kt, up}\PY{l+s+s2}{\PYZdq{}}
+           \PY{k}{def} \PY{n+nf}{kt}\PY{p}{(}\PY{n}{u}\PY{p}{,}\PY{n}{v}\PY{p}{,}\PY{n}{up}\PY{p}{)}\PY{p}{:}
+             \PY{n}{f}\PY{o}{=}\PY{n}{k}\PY{o}{*}\PY{p}{(}\PY{n}{u}\PY{o}{\PYZhy{}}\PY{n}{up}\PY{p}{)}
+             \PY{k}{if} \PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{fy}\PY{p}{)}\PY{o}{\PYZlt{}}\PY{n}{f}\PY{o}{\PYZlt{}}\PY{n}{fy}\PY{p}{:}               \PY{k}{return} \PY{n}{k}\PY{p}{,}\PY{n}{up}
+             \PY{k}{if} \PY{n}{fy}\PY{o}{\PYZlt{}}\PY{o}{=}\PY{n}{f}    \PY{o+ow}{and} \PY{n}{v}\PY{o}{\PYZgt{}}\PY{l+m+mi}{0}\PY{p}{:}  \PY{n}{up}\PY{o}{=}\PY{n}{u}\PY{o}{\PYZhy{}}\PY{n}{uy}\PY{p}{;}\PY{k}{return} \PY{l+m+mi}{0}\PY{p}{,}\PY{n}{up}
+             \PY{k}{if} \PY{n}{fy}\PY{o}{\PYZlt{}}\PY{o}{=}\PY{n}{f}    \PY{o+ow}{and} \PY{n}{v}\PY{o}{\PYZlt{}}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{:} \PY{n}{up}\PY{o}{=}\PY{n}{u}\PY{o}{\PYZhy{}}\PY{n}{uy}\PY{p}{;}\PY{k}{return} \PY{n}{k}\PY{p}{,}\PY{n}{up}
+             \PY{k}{if} \PY{n}{f}\PY{o}{\PYZlt{}}\PY{o}{=}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{fy}\PY{p}{)} \PY{o+ow}{and} \PY{n}{v}\PY{o}{\PYZlt{}}\PY{l+m+mi}{0}\PY{p}{:}  \PY{n}{up}\PY{o}{=}\PY{n}{u}\PY{o}{+}\PY{n}{uy}\PY{p}{;}\PY{k}{return} \PY{l+m+mi}{0}\PY{p}{,}\PY{n}{up}
+             \PY{k}{else}\PY{p}{:}                 \PY{n}{up}\PY{o}{=}\PY{n}{u}\PY{o}{+}\PY{n}{uy}\PY{p}{;}\PY{k}{return} \PY{n}{k}\PY{p}{,}\PY{n}{up}
+           \PY{k}{return} \PY{n}{kt}
+\end{Verbatim}
+
+
+    \subsubsection{Problem data}\label{problem-data}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}26}]:} \PY{c+c1}{\PYZsh{} Exercise from lesson 04}
+         \PY{c+c1}{\PYZsh{} }
+         \PY{n}{mass} \PY{o}{=} \PY{l+m+mf}{1000.00}       \PY{c+c1}{\PYZsh{} kilograms}
+         \PY{n}{k}  \PY{o}{=}  \PY{l+m+mf}{40000.00}       \PY{c+c1}{\PYZsh{} Newtons per metre}
+         \PY{n}{zeta}  \PY{o}{=}   \PY{l+m+mf}{0.03}       \PY{c+c1}{\PYZsh{} zeta is the damping ratio}
+         \PY{n}{fy} \PY{o}{=}   \PY{l+m+mf}{2500.00}       \PY{c+c1}{\PYZsh{} yelding force, Newtons}
+         \PY{n}{t1} \PY{o}{=}      \PY{l+m+mf}{0.30}       \PY{c+c1}{\PYZsh{} half\PYZhy{}sine impulse duration, seconds}
+         \PY{n}{p0} \PY{o}{=}   \PY{l+m+mf}{6000.00}       \PY{c+c1}{\PYZsh{} half\PYZhy{}sine impulse peak value, Newtons}
+         \PY{n}{uy} \PY{o}{=}      \PY{n}{fy}\PY{o}{/}\PY{n}{k}       \PY{c+c1}{\PYZsh{} yelding displacement, metres}
+\end{Verbatim}
+
+
+    \subsubsection{Initialize the algorithm}\label{initialize-the-algorithm}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  compute the functions that return the load and the tangent sstiffness
+  + plastic deformation
+\item
+  compute the damping constant
+\item
+  for a given time step, compute all the relevant algorithmic constants,
+  with \(\gamma=\frac12\) and \(\beta=\frac14\)
+\end{enumerate}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}27}]:} \PY{c+c1}{\PYZsh{} using the above constants, define the loading function}
+         \PY{n}{p}\PY{o}{=}\PY{n}{make\PYZus{}p}\PY{p}{(}\PY{n}{p0}\PY{p}{,}\PY{n}{t1}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} the following function, given the final displacement, the final}
+         \PY{c+c1}{\PYZsh{} velocity and the initial plastic deformation returns a) the tangent}
+         \PY{c+c1}{\PYZsh{} stiffness b) the final plastic deformation}
+         \PY{n}{kt}\PY{o}{=}\PY{n}{make\PYZus{}kt}\PY{p}{(}\PY{n}{k}\PY{p}{,}\PY{n}{fy}\PY{p}{)} 
+         
+         \PY{c+c1}{\PYZsh{} we need the damping coefficient \PYZdq{}c\PYZdq{}, to compute its value from the}
+         \PY{c+c1}{\PYZsh{} damping ratio we must first compute the undamped natural frequency }
+         \PY{n}{wn}\PY{o}{=}\PY{n}{sqrt}\PY{p}{(}\PY{n}{k}\PY{o}{/}\PY{n}{mass}\PY{p}{)}       \PY{c+c1}{\PYZsh{} natural frequency of the undamped system}
+         \PY{n}{damp}\PY{o}{=}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{mass}\PY{o}{*}\PY{n}{wn}\PY{o}{*}\PY{n}{zeta}         \PY{c+c1}{\PYZsh{} the damping coefficient}
+         
+         \PY{c+c1}{\PYZsh{} the time step}
+         \PY{n}{h}\PY{o}{=}\PY{l+m+mf}{0.005}
+         \PY{c+c1}{\PYZsh{} required duration for the response}
+         \PY{n}{t\PYZus{}end} \PY{o}{=} \PY{l+m+mf}{4.0}
+         \PY{c+c1}{\PYZsh{} the number of time steps to arrive at t\PYZus{}end}
+         \PY{n}{nsteps}\PY{o}{=}\PY{n+nb}{int}\PY{p}{(}\PY{p}{(}\PY{n}{t\PYZus{}end}\PY{o}{+}\PY{n}{h}\PY{o}{/}\PY{l+m+mi}{100}\PY{p}{)}\PY{o}{/}\PY{n}{h}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}
+         \PY{c+c1}{\PYZsh{} the maximum number of iterations in the Newton\PYZhy{}Raphson procedure}
+         \PY{n}{maxiters} \PY{o}{=} \PY{l+m+mi}{30}
+         \PY{c+c1}{\PYZsh{} using the constant acceleration algorithm}
+         \PY{c+c1}{\PYZsh{} below we define the relevant algorithmic constants}
+         \PY{n}{gamma}\PY{o}{=}\PY{l+m+mf}{0.5}
+         \PY{n}{beta}\PY{o}{=}\PY{l+m+mf}{1.}\PY{o}{/}\PY{l+m+mf}{4.}
+         \PY{n}{gb}\PY{o}{=}\PY{n}{gamma}\PY{o}{/}\PY{n}{beta}
+         \PY{n}{a}\PY{o}{=}\PY{n}{mass}\PY{o}{/}\PY{p}{(}\PY{n}{beta}\PY{o}{*}\PY{n}{h}\PY{p}{)}\PY{o}{+}\PY{n}{damp}\PY{o}{*}\PY{n}{gb}
+         \PY{n}{b}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{mass}\PY{o}{/}\PY{n}{beta}\PY{o}{+}\PY{n}{h}\PY{o}{*}\PY{n}{damp}\PY{o}{*}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{gb}\PY{o}{\PYZhy{}}\PY{l+m+mf}{1.0}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsubsection{System state
+initialization}\label{system-state-initialization}
+
+and a bit more, in species we create two empty vectors to hold the
+computation results
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}28}]:} \PY{n}{t0}\PY{o}{=}\PY{l+m+mf}{0.0}
+         \PY{n}{u0}\PY{o}{=}\PY{l+m+mf}{0.0}
+         \PY{n}{up}\PY{o}{=}\PY{l+m+mf}{0.0}
+         \PY{n}{v0}\PY{o}{=}\PY{l+m+mf}{0.0}
+         \PY{n}{p0}\PY{o}{=}\PY{n}{p}\PY{p}{(}\PY{n}{t0}\PY{p}{)}
+         \PY{p}{(}\PY{n}{k0}\PY{p}{,} \PY{n}{up}\PY{p}{)}\PY{o}{=}\PY{n}{kt}\PY{p}{(}\PY{n}{u0}\PY{p}{,}\PY{n}{v0}\PY{p}{,}\PY{n}{up}\PY{p}{)}
+         \PY{n}{a0}\PY{o}{=}\PY{p}{(}\PY{n}{p0}\PY{o}{\PYZhy{}}\PY{n}{damp}\PY{o}{*}\PY{n}{v0}\PY{o}{\PYZhy{}}\PY{n}{k0}\PY{o}{*}\PY{p}{(}\PY{n}{u0}\PY{o}{\PYZhy{}}\PY{n}{up}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{mass}
+         
+         \PY{n}{time} \PY{o}{=} \PY{p}{[}\PY{p}{]}\PY{p}{;} \PY{n}{disp} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+\end{Verbatim}
+
+
+    \subsubsection{Iteration}\label{iteration}
+
+We iterate over time and, if there is a state change, over the single
+time step to equilibrate the unbalanced loadings
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}29}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{nsteps}\PY{p}{)}\PY{p}{:}
+         
+             \PY{n}{time}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{t0}\PY{p}{)}\PY{p}{;} \PY{n}{disp}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{u0}\PY{p}{)}
+         
+             \PY{c+c1}{\PYZsh{} advance time, next external load value, etc}
+             \PY{n}{t1} \PY{o}{=} \PY{n}{t0} \PY{o}{+} \PY{n}{h}
+             \PY{n}{p1} \PY{o}{=} \PY{n}{p}\PY{p}{(}\PY{n}{t1}\PY{p}{)}
+             \PY{n}{Dp} \PY{o}{=} \PY{n}{p1} \PY{o}{\PYZhy{}} \PY{n}{p0}
+             \PY{n}{Dp\PYZus{}}\PY{o}{=} \PY{n}{Dp} \PY{o}{+} \PY{n}{a}\PY{o}{*}\PY{n}{v0} \PY{o}{+} \PY{n}{b}\PY{o}{*}\PY{n}{a0}
+             \PY{n}{k\PYZus{}} \PY{o}{=} \PY{n}{k0} \PY{o}{+} \PY{n}{gb}\PY{o}{*}\PY{n}{damp}\PY{o}{/}\PY{n}{h} \PY{o}{+} \PY{n}{mass}\PY{o}{/}\PY{p}{(}\PY{n}{beta}\PY{o}{*}\PY{n}{h}\PY{o}{*}\PY{n}{h}\PY{p}{)}
+             \PY{c+c1}{\PYZsh{} we prepare the machinery for the modified Newton\PYZhy{}Raphson}
+             \PY{c+c1}{\PYZsh{} algorithm.  if we have no state change in the time step, then the}
+             \PY{c+c1}{\PYZsh{} N\PYZhy{}R algorithm is equivalent to the standard procedure}
+             \PY{n}{u\PYZus{}init}\PY{o}{=}\PY{n}{u0}\PY{p}{;} \PY{n}{v\PYZus{}init}\PY{o}{=}\PY{n}{v0} \PY{c+c1}{\PYZsh{} initial state}
+             \PY{n}{f\PYZus{}spring}\PY{o}{=}\PY{n}{k}\PY{o}{*}\PY{p}{(}\PY{n}{u0}\PY{o}{\PYZhy{}}\PY{n}{up}\PY{p}{)}   \PY{c+c1}{\PYZsh{} the force in the spring}
+             \PY{n}{DR}\PY{o}{=}\PY{n}{Dp\PYZus{}}               \PY{c+c1}{\PYZsh{} the unbalanced force, initially equal to the}
+                                  \PY{c+c1}{\PYZsh{} external load increment}
+             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{maxiters}\PY{p}{)}\PY{p}{:}
+                 \PY{n}{Du}\PY{o}{=}\PY{n}{DR}\PY{o}{/}\PY{n}{k\PYZus{}}           \PY{c+c1}{\PYZsh{} the disp increment according to the initial stiffness}
+                 \PY{n}{u\PYZus{}next} \PY{o}{=} \PY{n}{u\PYZus{}init} \PY{o}{+} \PY{n}{Du}
+                 \PY{n}{v\PYZus{}next} \PY{o}{=} \PY{n}{v\PYZus{}init} \PY{o}{+} \PY{n}{gb}\PY{o}{*}\PY{n}{Du}\PY{o}{/}\PY{n}{h} \PY{o}{\PYZhy{}} \PY{n}{gb}\PY{o}{*}\PY{n}{v\PYZus{}init} \PY{o}{+} \PY{n}{h}\PY{o}{*}\PY{p}{(}\PY{l+m+mf}{1.0}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{gb}\PY{p}{)}\PY{o}{*}\PY{n}{a0}
+                                    \PY{c+c1}{\PYZsh{} we are interested in the total plastic elongation}
+                 \PY{n}{oops}\PY{p}{,}\PY{n}{up}\PY{o}{=}\PY{n}{kt}\PY{p}{(}\PY{n}{u\PYZus{}next}\PY{p}{,}\PY{n}{v\PYZus{}next}\PY{p}{,}\PY{n}{up}\PY{p}{)}
+                                    \PY{c+c1}{\PYZsh{} because we need the spring force at the end}
+                                    \PY{c+c1}{\PYZsh{} of the time step}
+                 \PY{n}{f\PYZus{}spring\PYZus{}next}\PY{o}{=}\PY{n}{k}\PY{o}{*}\PY{p}{(}\PY{n}{u\PYZus{}next}\PY{o}{\PYZhy{}}\PY{n}{up}\PY{p}{)}
+                                    \PY{c+c1}{\PYZsh{} so that we can compute the fraction of the}
+                                    \PY{c+c1}{\PYZsh{} incremental force that\PYZsq{}s equilibrated at the}
+                                    \PY{c+c1}{\PYZsh{} end of the time step}
+                 \PY{n}{df}\PY{o}{=}\PY{n}{f\PYZus{}spring\PYZus{}next}\PY{o}{\PYZhy{}}\PY{n}{f\PYZus{}spring}\PY{o}{+}\PY{p}{(}\PY{n}{k\PYZus{}}\PY{o}{\PYZhy{}}\PY{n}{k0}\PY{p}{)}\PY{o}{*}\PY{n}{Du}
+                                    \PY{c+c1}{\PYZsh{} and finally the incremental forces unbalanced}
+                                    \PY{c+c1}{\PYZsh{} at the end of the time step}
+                 \PY{n}{DR}\PY{o}{=}\PY{n}{DR}\PY{o}{\PYZhy{}}\PY{n}{df}
+                                    \PY{c+c1}{\PYZsh{} finish updating the system state}
+                 \PY{n}{u\PYZus{}init}\PY{o}{=}\PY{n}{u\PYZus{}next}\PY{p}{;} \PY{n}{v\PYZus{}init}\PY{o}{=}\PY{n}{v\PYZus{}next}\PY{p}{;} \PY{n}{f\PYZus{}spring}\PY{o}{=}\PY{n}{f\PYZus{}spring\PYZus{}next}
+                                    \PY{c+c1}{\PYZsh{} if the unbalanced load is small enough (the}
+                                    \PY{c+c1}{\PYZsh{} criteria used in practical programs are}
+                                    \PY{c+c1}{\PYZsh{} energy based) exit the loop \PYZhy{} note that we}
+                                    \PY{c+c1}{\PYZsh{} have no plasticization/unloading DR==0 at the}
+                                    \PY{c+c1}{\PYZsh{} end of the first iteration}
+                 \PY{k}{if} \PY{n+nb}{abs}\PY{p}{(}\PY{n}{DR}\PY{p}{)}\PY{o}{\PYZlt{}}\PY{n}{fy}\PY{o}{*}\PY{l+m+mf}{1E\PYZhy{}6}\PY{p}{:} \PY{k}{break}
+             \PY{c+c1}{\PYZsh{} now the load increment is balanced by the spring force and}
+             \PY{c+c1}{\PYZsh{} increments in inertial and damping forces, we need to compute the}
+             \PY{c+c1}{\PYZsh{} full state at the end of the time step, and to change all}
+             \PY{c+c1}{\PYZsh{} denominations to reflect the fact that we are starting a new time step.}
+             \PY{n}{Du}\PY{o}{=}\PY{n}{u\PYZus{}init}\PY{o}{\PYZhy{}}\PY{n}{u0}
+             \PY{n}{Dv}\PY{o}{=}\PY{n}{gamma}\PY{o}{*}\PY{n}{Du}\PY{o}{/}\PY{p}{(}\PY{n}{beta}\PY{o}{*}\PY{n}{h}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{gamma}\PY{o}{*}\PY{n}{v0}\PY{o}{/}\PY{n}{beta}\PY{o}{+}\PY{n}{h}\PY{o}{*}\PY{p}{(}\PY{l+m+mf}{1.0}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{gamma}\PY{o}{/}\PY{n}{beta}\PY{p}{)}\PY{o}{*}\PY{n}{a0}
+             \PY{n}{u1}\PY{o}{=}\PY{n}{u0}\PY{o}{+}\PY{n}{Du} \PY{p}{;} \PY{n}{v1}\PY{o}{=}\PY{n}{v0}\PY{o}{+}\PY{n}{Dv}
+             \PY{n}{k1}\PY{p}{,}\PY{n}{up}\PY{o}{=}\PY{n}{kt}\PY{p}{(}\PY{n}{u1}\PY{p}{,}\PY{n}{v1}\PY{p}{,}\PY{n}{up}\PY{p}{)}
+             \PY{n}{a1}\PY{o}{=}\PY{p}{(}\PY{n}{p}\PY{p}{(}\PY{n}{t1}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{damp}\PY{o}{*}\PY{n}{v1}\PY{o}{\PYZhy{}}\PY{n}{k}\PY{o}{*}\PY{p}{(}\PY{n}{u1}\PY{o}{\PYZhy{}}\PY{n}{up}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{mass}
+             \PY{n}{t0}\PY{o}{=}\PY{n}{t1}\PY{p}{;} \PY{n}{v0}\PY{o}{=}\PY{n}{v1}\PY{p}{;} \PY{n}{u0}\PY{o}{=}\PY{n}{u1} \PY{p}{;} \PY{n}{a0}\PY{o}{=}\PY{n}{a1} \PY{p}{;} \PY{n}{k0}\PY{o}{=}\PY{n}{k1} \PY{p}{;} \PY{n}{p0}\PY{o}{=}\PY{n}{p1}
+\end{Verbatim}
+
+
+    \subsubsection{Plotting our results}\label{plotting-our-results}
+
+we plot red crosses for the numericaly computed response and a
+continuous line for the results of the analytical integration of the
+equation of motion.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}31}]:} \PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{)}
+         \PY{n}{plot}\PY{p}{(}\PY{n}{time}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{,}\PY{n}{disp}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{xr}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plot}\PY{p}{(}\PY{n}{t\PYZus{}el}\PY{p}{,} \PY{n}{x\PYZus{}el}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+              \PY{n}{t\PYZus{}y1}\PY{p}{,} \PY{n}{x\PYZus{}y1}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+              \PY{n}{t\PYZus{}y2}\PY{p}{,} \PY{n}{x\PYZus{}y2}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+              \PY{n}{t\PYZus{}e2}\PY{p}{,} \PY{n}{x\PYZus{}e2}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+              \PY{p}{(}\PY{l+m+mf}{0.6}\PY{p}{,} \PY{l+m+mf}{4.0}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x0}\PY{o}{\PYZhy{}}\PY{n}{xy}\PY{p}{,} \PY{n}{x0}\PY{o}{\PYZhy{}}\PY{n}{xy}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Continuous line: exact response.}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}
+               \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Red crosses: constant acceleration + MNR.}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Time, s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Displacement, m}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{EP_Exact+Numerical_files/EP_Exact+Numerical_49_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
